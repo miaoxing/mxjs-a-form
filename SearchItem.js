@@ -1,5 +1,6 @@
 import React from "react";
 import {Col, Form, Input} from 'antd';
+import PropTypes from 'prop-types';
 
 const SearchItem = ({children, ...rest}) => {
   return <Col span={8}>
@@ -8,5 +9,9 @@ const SearchItem = ({children, ...rest}) => {
     </Form.Item>
   </Col>
 }
+
+SearchItem.propTypes = {
+  children: PropTypes.node,
+};
 
 export default SearchItem;

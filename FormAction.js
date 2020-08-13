@@ -2,8 +2,9 @@ import React from 'react';
 import {CListBtn} from "@mxjs/a-clink";
 import {Button, Form} from 'antd';
 import {Box} from "rebass";
+import PropType from 'prop-types';
 
-function FormAction({url, list = true}) {
+const FormAction = ({url, list = true}) => {
   return (
     <Form.Item
       wrapperCol={{offset: 4, span: 8}}
@@ -17,5 +18,10 @@ function FormAction({url, list = true}) {
     </Form.Item>
   );
 }
+
+FormAction.propTypes = {
+  url: PropType.string,
+  list: PropType.bool,
+};
 
 export default FormAction;

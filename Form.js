@@ -1,5 +1,6 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import {withRouter} from 'react-router-dom';
 import curUrl from "@mxjs/cur-url";
 import {Form as AntdForm} from 'antd';
@@ -19,39 +20,51 @@ class Form extends React.Component {
     /**
      * 提交到后台的地址，默认自动识别为当前表单地址
      */
-    url: propTypes.string,
+    url: PropTypes.string,
 
     /**
      * 获取表单数据的后台地址
      */
-    valuesUrl: propTypes.oneOfType([propTypes.string, propTypes.bool]),
+    valuesUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 
     /**
      * 提交成功后跳转的地址，默认为上一级页面
      */
-    redirectUrl: propTypes.string,
+    redirectUrl: PropTypes.string,
+
+    /**
+     * 提交前回调
+     */
+    beforeSubmit: PropTypes.func,
 
     /**
      * 渲染子组件
      */
-    render: propTypes.func,
+    render: PropTypes.func,
 
     /**
      * HTML form 元素的属性
      */
-    formProps: propTypes.object,
+    formProps: PropTypes.object,
 
     /**
      * Formik 的属性
      */
-    initialValues: propTypes.object,
+    initialValues: PropTypes.object,
 
-    formRef: propTypes.oneOfType([propTypes.func, propTypes.shape({current: propTypes.any})]),
+    formRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({current: PropTypes.any})]),
 
     /**
      * 是否移除提交数据中的空白
      */
-    trimSpaces: propTypes.bool,
+    trimSpaces: PropTypes.bool,
+
+    children: PropTypes.node,
+
+    history: ReactRouterPropTypes.history.isRequired,
+    location: ReactRouterPropTypes.location.isRequired,
+    match: ReactRouterPropTypes.match.isRequired,
+    staticContext: PropTypes.object,
   };
 
   static defaultProps = {

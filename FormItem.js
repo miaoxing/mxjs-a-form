@@ -1,7 +1,15 @@
 import React from "react";
+import PropType from 'prop-types';
 import {Form, Input, InputNumber} from 'antd';
 
 export default class extends React.Component {
+  static propTypes = {
+    children: PropType.node,
+    type: PropType.string,
+    name: PropType.string,
+    required: PropType.bool,
+  }
+
   renderChildren() {
     switch (true) {
       case !!this.props.children:

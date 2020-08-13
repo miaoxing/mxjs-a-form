@@ -2,13 +2,11 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import React from 'react';
-import AForm from '../AForm';
-import AFormItem from '../AFormItem';
+import Form from '../Form';
+import FormItem from '../FormItem';
 import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
 import {render} from '@testing-library/react'
-
-jest.mock('miaoxing');
 
 // https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
 Object.defineProperty(window, 'matchMedia', {
@@ -45,18 +43,18 @@ function createPromise() {
   return promise;
 }
 
-describe('AForm', () => {
+describe('Form', () => {
   test('initialValues', async () => {
     const {container} = render(<MemoryRouter>
-      <AForm
+      <Form
         initialValues={{
           foo: 1,
           bar: 2
         }}
       >
-        <AFormItem name="foo"/>
-        <AFormItem name="bar"/>
-      </AForm>
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
     </MemoryRouter>);
 
     expect(container.querySelector('#foo').value).toBe('1');
@@ -73,12 +71,12 @@ describe('AForm', () => {
     }));
 
     const {container} = render(<MemoryRouter>
-      <AForm
+      <Form
         valuesUrl="test"
       >
-        <AFormItem name="foo"/>
-        <AFormItem name="bar"/>
-      </AForm>
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
     </MemoryRouter>)
 
     await promise;
@@ -97,7 +95,7 @@ describe('AForm', () => {
 
     const form = React.createRef();
     render(<MemoryRouter>
-      <AForm
+      <Form
         url="test"
         initialValues={{
           foo: 1,
@@ -105,9 +103,9 @@ describe('AForm', () => {
         }}
         formRef={form}
       >
-        <AFormItem name="foo"/>
-        <AFormItem name="bar"/>
-      </AForm>
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
     </MemoryRouter>)
 
     form.current.submit();

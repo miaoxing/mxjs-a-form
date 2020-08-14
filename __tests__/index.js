@@ -49,7 +49,7 @@ describe('Form', () => {
       <Form
         initialValues={{
           foo: 1,
-          bar: 2
+          bar: 2,
         }}
       >
         <FormItem name="foo"/>
@@ -67,7 +67,7 @@ describe('Form', () => {
       data: {
         foo: 3,
         bar: 4,
-      }
+      },
     }));
 
     const {container} = render(<MemoryRouter>
@@ -99,7 +99,7 @@ describe('Form', () => {
         url="test"
         initialValues={{
           foo: 1,
-          bar: 2
+          bar: 2,
         }}
         formRef={form}
       >

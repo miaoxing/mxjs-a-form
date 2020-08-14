@@ -40,7 +40,7 @@ class Select extends React.Component {
 
 Select.defaultProps = {
   labelKey: 'label',
-  valueKey: 'value'
+  valueKey: 'value',
 };
 
 Select.propTypes = {

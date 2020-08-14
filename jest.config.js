@@ -1,7 +1,7 @@
 module.exports = {
   transform: {
     //'^.+\\.ts?$': 'ts-jest',
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest',
   },
   testEnvironment: 'jsdom',
   testTimeout: 10000,
@@ -11,11 +11,11 @@ module.exports = {
   // https://github.com/kulshekhar/ts-jest/issues/950
   globals: {
     'ts-jest': {
-      isolatedModules: true
+      isolatedModules: true,
     },
   },
   'moduleNameMapper': {
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/styleMock.js',
-    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js'
-  }
+    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
+  },
 };

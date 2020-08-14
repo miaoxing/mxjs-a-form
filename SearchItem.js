@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {Col, Form, Input} from 'antd';
 import PropTypes from 'prop-types';
 

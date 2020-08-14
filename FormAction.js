@@ -1,7 +1,7 @@
 import React from 'react';
-import {CListBtn} from "@mxjs/a-clink";
+import {CListBtn} from '@mxjs/a-clink';
 import {Button, Form} from 'antd';
-import {Box} from "rebass";
+import {Box} from 'rebass';
 import PropType from 'prop-types';
 
 const FormAction = ({url, list = true}) => {

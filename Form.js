@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import {withRouter} from 'react-router-dom';
-import curUrl from "@mxjs/cur-url";
+import curUrl from '@mxjs/cur-url';
 import {Form as AntdForm} from 'antd';
 import $ from 'miaoxing';
 import allTrim from 'all-trim';

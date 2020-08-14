@@ -7,8 +7,8 @@ const SearchItem = ({children, ...rest}) => {
     <Form.Item {...rest}>
       {children ? children : <Input/>}
     </Form.Item>
-  </Col>
-}
+  </Col>;
+};
 
 SearchItem.propTypes = {
   children: PropTypes.node,

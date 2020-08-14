@@ -6,7 +6,7 @@ import Form from '../Form';
 import FormItem from '../FormItem';
 import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
-import {render} from '@testing-library/react'
+import {render} from '@testing-library/react';
 
 // https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
 Object.defineProperty(window, 'matchMedia', {
@@ -35,7 +35,7 @@ function createPromise() {
       reject(result);
       return promise;
     };
-  })
+  });
 
   promise.resolve = res;
   promise.reject = rej;
@@ -77,7 +77,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>)
+    </MemoryRouter>);
 
     await promise;
 
@@ -106,7 +106,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>)
+    </MemoryRouter>);
 
     form.current.submit();
 

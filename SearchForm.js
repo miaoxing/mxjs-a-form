@@ -13,7 +13,7 @@ const SearchForm = withTable(({children, table, ...rest}) => {
     <Row>
       {children}
     </Row>
-  </Form>
+  </Form>;
 });
 
 export default SearchForm;

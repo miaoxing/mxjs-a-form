@@ -18,11 +18,11 @@ class Select extends React.Component {
       if (typeof option === 'object') {
         options.push(<Option key={option[this.props.valueKey]} value={option[this.props.valueKey]}>
           {option[this.props.labelKey]}
-        </Option>)
+        </Option>);
       } else if (isArray) {
-        options.push(<Option key={option} value={option}>{option}</Option>)
+        options.push(<Option key={option} value={option}>{option}</Option>);
       } else {
-        options.push(<Option key={key} value={key}>{option}</Option>)
+        options.push(<Option key={key} value={key}>{option}</Option>);
       }
     });
 
@@ -53,4 +53,4 @@ Select.propTypes = {
   all: PropTypes.bool,
 };
 
-export default Select
+export default Select;

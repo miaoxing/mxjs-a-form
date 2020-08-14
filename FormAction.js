@@ -17,7 +17,7 @@ const FormAction = ({url, list = true}) => {
       </Box>
     </Form.Item>
   );
-}
+};
 
 FormAction.propTypes = {
   url: PropType.string,

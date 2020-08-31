@@ -23,6 +23,11 @@ class Form extends React.Component {
     url: PropTypes.string,
 
     /**
+     * 提交到后台的方法
+     */
+    method: PropTypes.string,
+
+    /**
      * 获取表单数据的后台地址
      */
     valuesUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
@@ -59,7 +64,7 @@ class Form extends React.Component {
      */
     trimSpaces: PropTypes.bool,
 
-    children: PropTypes.node,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 
     history: ReactRouterPropTypes.history.isRequired,
     location: ReactRouterPropTypes.location.isRequired,
@@ -94,8 +99,8 @@ class Form extends React.Component {
       values = allTrim(values);
     }
 
-    $.post({
-      url: this.getSubmitUrl(),
+    $.http({
+      ...this.getUrlAndMethod(),
       data: values,
       loading: true,
     }).then(ret => {
@@ -111,6 +116,17 @@ class Form extends React.Component {
     }
   }
 
+  getUrlAndMethod() {
+    const config = curUrl.apiFormUrlAndMethod();
+    if (this.props.url) {
+      config.url = this.props.url;
+    }
+    if (this.props.method) {
+      config.method = this.props.method;
+    }
+    return config;
+  }
+
   getSubmitUrl() {
     return this.props.url || curUrl.apiForm();
   }
@@ -121,7 +137,7 @@ class Form extends React.Component {
 
   getValuesUrl() {
     if (typeof this.props.valuesUrl === 'undefined') {
-      return curUrl.api();
+      return curUrl.apiData();
     }
 
     return this.props.valuesUrl;

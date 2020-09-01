@@ -1,3 +1,24 @@
+# [0.2.0](https://github.com/miaoxing/mxjs-a-form/compare/v0.1.3...v0.2.0) (2020-09-01)
+
+
+### Code Refactoring
+
+* 更改接口为 REST 风格 ([96b8d14](https://github.com/miaoxing/mxjs-a-form/commit/96b8d1456c8e4d1ced763c3cbaccc162141e96e6))
+
+
+### BREAKING CHANGES
+
+* 更改接口为 REST 风格
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/cur-url:** upgrade from 0.1.4 to 0.2.0
+* **miaoxing:** upgrade from 0.1.3 to 0.1.4
+
 ## [0.1.3](https://github.com/miaoxing/mxjs-a-form/compare/v0.1.2...v0.1.3) (2020-08-17)
 
 

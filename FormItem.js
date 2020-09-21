@@ -27,6 +27,9 @@ export default class extends React.Component {
       case this.props.type === 'number':
         return <InputNumber/>;
 
+      case this.props.type === 'textarea':
+        return <Input.TextArea/>;
+
       default:
         return <Input/>;
     }

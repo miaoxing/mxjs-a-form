@@ -38,6 +38,11 @@ class Form extends React.Component {
     redirectUrl: PropTypes.string,
 
     /**
+     * 加载数据后的回调
+     */
+    afterLoad: PropTypes.func,
+
+    /**
      * 提交前回调
      */
     beforeSubmit: PropTypes.func,
@@ -146,7 +151,11 @@ class Form extends React.Component {
 
     const valuesUrl = this.getValuesUrl();
     if (valuesUrl !== false) {
+      // TODO 检查 ret
       const ret = await $.get(valuesUrl);
+      if (this.props.afterLoad) {
+        this.props.afterLoad(ret);
+      }
       this.props.formRef.current.setFieldsValue(this.filterValues(ret.data));
     }
   }

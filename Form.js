@@ -177,7 +177,7 @@ class Form extends React.Component {
 
   render() {
     const {
-      children, formRef, valuesUrl, redirectUrl, beforeSubmit, staticContext, trimSpaces,
+      children, formRef, valuesUrl, redirectUrl, afterLoad, beforeSubmit, staticContext, trimSpaces,
       history, location, match,
       ...props
     } = this.props;

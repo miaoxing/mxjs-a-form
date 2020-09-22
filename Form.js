@@ -127,10 +127,6 @@ class Form extends React.Component {
     return config;
   }
 
-  getSubmitUrl() {
-    return this.props.url || curUrl.apiForm();
-  }
-
   getRedirectUrl() {
     return this.props.redirectUrl || curUrl.index();
   }

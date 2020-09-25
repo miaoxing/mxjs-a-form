@@ -1,3 +1,23 @@
+## [0.2.1](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.0...v0.2.1) (2020-09-25)
+
+
+### Features
+
+* 增加 FormContext，可用于子组件获取 form 对象 ([e3da6f3](https://github.com/miaoxing/mxjs-a-form/commit/e3da6f38eacf404faf75854df4970a44dd96e94d))
+* **SearchForm:** 增加 filterValues 回调，用于在搜索前更改表单的值 ([9740ddd](https://github.com/miaoxing/mxjs-a-form/commit/9740ddd4b653952b433e02d922c18fe8b58c5a71))
+* FromItem 增加 textarea 支持 ([15a9d8f](https://github.com/miaoxing/mxjs-a-form/commit/15a9d8f19a9358765f279604d01067c449eccc85))
+* 增加 afterLoad 回调，可以用于更改请求的返回值 ([27c3e3f](https://github.com/miaoxing/mxjs-a-form/commit/27c3e3f0add90f018c8878f6b99e461ec4cc4994))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/cur-url:** upgrade from 0.2.0 to 0.2.1
+* **miaoxing:** upgrade from 0.1.4 to 0.1.5
+* **@miaoxing/dev:** upgrade from 6.1.1 to 6.1.2
+
 # [0.2.0](https://github.com/miaoxing/mxjs-a-form/compare/v0.1.3...v0.2.0) (2020-09-01)
 
 

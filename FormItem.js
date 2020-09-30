@@ -6,7 +6,7 @@ export default class extends React.Component {
   static propTypes = {
     children: PropType.node,
     type: PropType.string,
-    name: PropType.string,
+    name: PropType.oneOfType([PropType.string, PropType.array]),
     required: PropType.bool,
   }
 

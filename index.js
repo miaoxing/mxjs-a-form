@@ -5,3 +5,4 @@ export FormContext from './FormContext';
 export SearchForm from './SearchForm';
 export SearchItem from './SearchItem';
 export Select from './Select';
+export useForm from './useForm';

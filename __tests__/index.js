@@ -7,26 +7,7 @@ import FormItem from '../FormItem';
 import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
 import {render} from '@testing-library/react';
-
-function createPromise() {
-  let res, rej;
-
-  const promise = new Promise((resolve, reject) => {
-    res = (result) => {
-      resolve(result);
-      return promise;
-    };
-    rej = (result) => {
-      reject(result);
-      return promise;
-    };
-  });
-
-  promise.resolve = res;
-  promise.reject = rej;
-
-  return promise;
-}
+import {createPromise} from '@mxjs/test';
 
 describe('Form', () => {
   test('initialValues', async () => {
@@ -73,7 +54,7 @@ describe('Form', () => {
   test('submit', async () => {
     const promise = createPromise();
 
-    $.post = jest.fn().mockImplementationOnce(() => promise.resolve({
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
       code: 1,
       message: 'success',
     }));
@@ -97,6 +78,6 @@ describe('Form', () => {
 
     await promise;
 
-    expect($.post).toHaveBeenCalledTimes(1);
+    expect($.http).toHaveBeenCalledTimes(1);
   });
 });

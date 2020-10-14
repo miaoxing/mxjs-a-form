@@ -92,6 +92,7 @@ const Form = (
       initialValues={initialValues}
       labelCol={{span: 4}}
       wrapperCol={{span: 8}}
+      scrollToFirstError={true}
       onFinish={(values) => {
         values = form.convertOutput(values);
 

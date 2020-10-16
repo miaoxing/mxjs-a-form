@@ -9,6 +9,11 @@ class Select extends React.Component {
   renderOptions() {
     let options = [];
 
+    if (this.props.firstLabel) {
+      const firstValue = typeof this.props.firstValue !== 'undefined' ? this.props.firstValue : 0;
+      options.push(<Option key={firstValue} value={firstValue}>{this.props.firstLabel}</Option>);
+    }
+
     if (this.props.all) {
       options.push(<Option key="" value="">全部</Option>);
     }
@@ -30,7 +35,7 @@ class Select extends React.Component {
   }
 
   render() {
-    const {options, labelKey, valueKey, all, ...props} = this.props;
+    const {options, labelKey, valueKey, all, firstLabel, firstValue, ...props} = this.props;
 
     return <AntdSelect {...props}>
       {this.renderOptions()}
@@ -51,6 +56,8 @@ Select.propTypes = {
   labelKey: PropTypes.string,
   valueKey: PropTypes.string,
   all: PropTypes.bool,
+  firstLabel: PropTypes.string,
+  firstValue: PropTypes.any,
 };
 
 export default Select;

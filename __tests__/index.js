@@ -51,6 +51,73 @@ describe('Form', () => {
     expect(container.querySelector('#bar').value).toBe('4');
   });
 
+  test('beforeSubmit', async () => {
+    const promise = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      code: 1,
+      message: 'success',
+    }));
+
+    const form = React.createRef();
+    render(<MemoryRouter>
+      <Form
+        url="test"
+        initialValues={{
+          foo: 1,
+          bar: 2,
+        }}
+        formRef={form}
+        beforeSubmit={(values) => {
+          values.foo = 3;
+          delete values.bar;
+          return values;
+        }}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </MemoryRouter>);
+
+    form.current.submit();
+
+    await promise;
+
+    expect($.http).toHaveBeenCalledTimes(1);
+    expect($.http).toMatchSnapshot();
+  });
+
+  test('beforeSubmit return false', async () => {
+    const promise = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      code: 1,
+      message: 'success',
+    }));
+
+    const form = React.createRef();
+    render(<MemoryRouter>
+      <Form
+        url="test"
+        initialValues={{
+          foo: 1,
+          bar: 2,
+        }}
+        formRef={form}
+        beforeSubmit={() => {
+          return false;
+        }}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </MemoryRouter>);
+
+    form.current.submit();
+
+    expect($.http).toHaveBeenCalledTimes(0);
+  });
+
   test('submit', async () => {
     const promise = createPromise();
 

@@ -98,6 +98,9 @@ const Form = (
 
         if (beforeSubmit) {
           values = beforeSubmit(values);
+          if (values === false) {
+            return;
+          }
         }
 
         if (trimSpaces) {

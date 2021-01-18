@@ -70,7 +70,7 @@ const Form = (
         return;
       }
 
-      const valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
+      valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
       if (valuesUrl !== false) {
         // TODO 检查 ret
         const ret = await $.get(valuesUrl);

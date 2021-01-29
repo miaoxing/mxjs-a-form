@@ -36,7 +36,7 @@ export default class extends React.Component {
   }
 
   render() {
-    let {required, type, name, ...props} = this.props;
+    let {required, type, name, messageVariables = {}, ...props} = this.props;
 
     if (type === 'plain') {
       // 纯文本使用了自定义内容，需启用 shouldUpdate
@@ -47,9 +47,14 @@ export default class extends React.Component {
       props.name = name;
     }
 
+    if (!props.label) {
+      messageVariables.label = '该项';
+    }
+
     return <Form.Item
       noStyle={type === 'hidden'}
       rules={[{required: required}]}
+      messageVariables={messageVariables}
       {...props}
     >
       {this.renderChildren()}

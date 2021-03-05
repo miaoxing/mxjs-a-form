@@ -1,3 +1,29 @@
+## [0.2.2](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.1...v0.2.2) (2021-03-05)
+
+
+### Bug Fixes
+
+* **form:** 解决 `valuesUrl` 变量变成 `undefined` ([09aef4a](https://github.com/miaoxing/mxjs-a-form/commit/09aef4ace8fd12bdc80a50b2143b525abea98717))
+
+
+### Features
+
+* **FormItem:** 如果没有定义 label，默认的 label 使用 "该项" ([73a78d2](https://github.com/miaoxing/mxjs-a-form/commit/73a78d2aaa9fe570183ba258cab7382a50dc87f2))
+* Form beforeSubmit 允许返回 false 来停止表单提交 ([f0495bd](https://github.com/miaoxing/mxjs-a-form/commit/f0495bda3dcad396515ca82b560c58ea268af401))
+* Select 增加 firstLabel, firstValue 选项，用于自定义下拉框第一个值 ([f603500](https://github.com/miaoxing/mxjs-a-form/commit/f6035004502b01ef0335780b77cb7d80cfa451dd))
+* 增加 FormContext, useForm，方便子组件处理表单数据 ([6e2557b](https://github.com/miaoxing/mxjs-a-form/commit/6e2557b1e7efeecbdf1143f0f3e9de1863931613))
+* 表单提交校验不通过时，滚动到错误位置 ([7f8dc33](https://github.com/miaoxing/mxjs-a-form/commit/7f8dc335b23d3935d97c6cea9ea7478589adbfbe))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/cur-url:** upgrade from 0.2.1 to 0.2.2
+* **miaoxing:** upgrade from 0.1.5 to 0.1.6
+* **@mxjs/test:** upgrade from 0.1.0 to 0.1.1
+
 ## [0.2.1](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.0...v0.2.1) (2020-09-25)
 
 

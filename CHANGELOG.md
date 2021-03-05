@@ -1,3 +1,15 @@
+## [0.2.3](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.2...v0.2.3) (2021-03-05)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/cur-url:** upgrade from 0.2.2 to 0.2.3
+* **miaoxing:** upgrade from 0.1.6 to 0.1.7
+* **@miaoxing/dev:** upgrade from 6.1.2 to 6.2.0
+
 ## [0.2.2](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.1...v0.2.2) (2021-03-05)
 
 

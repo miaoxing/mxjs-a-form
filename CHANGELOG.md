@@ -1,3 +1,20 @@
+## [0.2.6](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.5...v0.2.6) (2021-03-10)
+
+
+### Bug Fixes
+
+* 指定要发布的文件 ([5b121c8](https://github.com/miaoxing/mxjs-a-form/commit/5b121c8fb7a552aeca3cacd09769dac571bb8d41))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/cur-url:** upgrade from 0.2.5 to 0.2.6
+* **miaoxing:** upgrade from 0.1.9 to 0.1.10
+* **@miaoxing/dev:** upgrade from 6.3.1 to 6.3.2
+
 ## [0.2.5](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.4...v0.2.5) (2021-03-09)
 
 

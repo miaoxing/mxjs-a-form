@@ -1,3 +1,14 @@
+## [0.2.9](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.8...v0.2.9) (2021-03-11)
+
+
+
+
+
+### Dependencies
+
+* **miaoxing:** upgrade from `0.1.10` to `0.2.0`
+* **@mxjs/test:** upgrade from `0.1.2` to `0.1.3`
+
 ## [0.2.8](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.7...v0.2.8) (2021-03-11)
 
 

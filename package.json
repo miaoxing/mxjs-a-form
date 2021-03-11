@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/a-form",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "> TODO: description",
   "author": "twinh <twinhuang@qq.com>",
   "homepage": "https://github.com/twinh/miaoxing#readme",
@@ -38,7 +38,7 @@
     "babel-preset-miaoxing": "^0.1.4",
     "core-js": "^3.6.5",
     "@miaoxing/dev": "^6.3.2",
-    "@mxjs/test": "^0.1.1"
+    "@mxjs/test": "^0.1.2"
   },
   "dependencies": {
     "@mxjs/cur-url": "^0.2.7",

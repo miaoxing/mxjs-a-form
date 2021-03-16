@@ -10,6 +10,7 @@ const SearchForm = withTable(({children, table, filterValues, ...rest}) => {
   return (
     <FormContext.Provider value={form}>
       <Form
+        form={form}
         labelCol={{span: 8}}
         wrapperCol={{span: 16}}
         onValuesChange={(changedValues, allValues) => {

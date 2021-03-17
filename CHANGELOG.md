@@ -1,3 +1,10 @@
+## [0.2.11](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.10...v0.2.11) (2021-03-17)
+
+
+### Bug Fixes
+
+* **SearchForm:** 表单缺少 `form` 属性，导致 `FormContext` 失效 ([84072f8](https://github.com/miaoxing/mxjs-a-form/commit/84072f80f437e654ca6ebcc3c5ea4e747051805a))
+
 ## [0.2.10](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.9...v0.2.10) (2021-03-12)
 
 

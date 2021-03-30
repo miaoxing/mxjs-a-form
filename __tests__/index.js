@@ -187,4 +187,43 @@ describe('Form', () => {
     expect($.http).toHaveBeenCalledTimes(1);
     expect($.http).toMatchSnapshot();
   });
+
+  test('redirect', async () => {
+    const promise = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      code: 0,
+      message: 'success',
+    }));
+
+    const history = createMemoryHistory();
+
+    history.push('/test');
+    expect(history.length).toBe(2);
+
+    const form = React.createRef();
+    render(<Router history={history}>
+      <Form
+        redirect={false}
+        url="test"
+        formRef={form}
+        initialValues={{}}
+      >
+        <FormItem name="foo"/>
+      </Form>
+    </Router>);
+
+    form.current.submit();
+
+    await promise;
+
+    // wait for $.ret(ret).suc() to execute
+    await new Promise(r => setTimeout(r, 100));
+
+    expect(history.length).toBe(2);
+    expect(history.location.pathname).toBe('/test');
+
+    expect($.http).toHaveBeenCalledTimes(1);
+    expect($.http).toMatchSnapshot();
+  });
 });

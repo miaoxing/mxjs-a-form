@@ -58,6 +58,7 @@ const Form = (
     trimSpaces,
     url,
     method,
+    redirect = true,
     redirectUrl,
     formRef,
     ...rest
@@ -116,9 +117,11 @@ const Form = (
           loading: true,
         }).then(ret => {
           $.ret(ret).suc(() => {
-            const url = getRedirectUrl(redirectUrl, ret);
-            if (url !== history.location.pathname) {
-              history.push(url);
+            if (redirect) {
+              const url = getRedirectUrl(redirectUrl, ret);
+              if (url !== history.location.pathname) {
+                history.push(url);
+              }
             }
           });
         });
@@ -145,6 +148,11 @@ Form.propTypes = {
    * 获取表单数据的后台地址
    */
   valuesUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+
+  /**
+   * 提交表单后是否跳转
+   */
+  redirect: PropTypes.bool,
 
   /**
    * 提交成功后跳转的地址，默认为上一级页面

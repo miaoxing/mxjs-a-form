@@ -4,10 +4,11 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import Form from '../Form';
 import FormItem from '../FormItem';
-import {MemoryRouter} from 'react-router';
+import {MemoryRouter, Router} from 'react-router';
 import $ from 'miaoxing';
-import {render} from '@testing-library/react';
+import {render, waitFor} from '@testing-library/react';
 import {createPromise} from '@mxjs/test';
+import {createMemoryHistory} from 'history';
 
 describe('Form', () => {
   test('initialValues', async () => {
@@ -55,7 +56,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 1,
+      code: 0,
       message: 'success',
     }));
 
@@ -91,7 +92,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 1,
+      code: 0,
       message: 'success',
     }));
 
@@ -122,7 +123,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 1,
+      code: 0,
       message: 'success',
     }));
 
@@ -146,5 +147,44 @@ describe('Form', () => {
     await promise;
 
     expect($.http).toHaveBeenCalledTimes(1);
+  });
+
+  test('redirectUrl fn', async () => {
+    const promise = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      code: 0,
+      message: 'success',
+    }));
+
+    const history = createMemoryHistory();
+    const form = React.createRef();
+    render(<Router history={history}>
+      <Form
+        redirectUrl={(ret) => {
+          return 'url/' + ret.message + '/' + ret.code;
+        }}
+        url="test"
+        initialValues={{
+          foo: 1,
+          bar: 2,
+        }}
+        formRef={form}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </Router>);
+
+    form.current.submit();
+
+    await promise;
+
+    await waitFor(() => {
+      expect(history.location.pathname).toBe('/url/success/0');
+    });
+
+    expect($.http).toHaveBeenCalledTimes(1);
+    expect($.http).toMatchSnapshot();
   });
 });

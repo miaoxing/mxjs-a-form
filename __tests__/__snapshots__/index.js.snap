@@ -25,3 +25,30 @@ exports[`Form beforeSubmit 1`] = `
   ],
 }
 `;
+
+exports[`Form redirectUrl fn 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "data": Object {
+          "bar": 2,
+          "foo": 1,
+        },
+        "loading": true,
+        "method": "POST",
+        "url": "test",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;

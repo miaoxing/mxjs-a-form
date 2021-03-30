@@ -34,7 +34,10 @@ function getUrlAndMethod(url, method) {
   return config;
 }
 
-function getRedirectUrl(redirectUrl) {
+function getRedirectUrl(redirectUrl, ret) {
+  if (typeof redirectUrl === 'function') {
+    return redirectUrl(ret);
+  }
   return redirectUrl || curUrl.index();
 }
 
@@ -58,7 +61,7 @@ const Form = (
     redirectUrl,
     formRef,
     ...rest
-  }
+  },
 ) => {
   const [form] = useAntdForm();
   const history = useHistory();
@@ -113,7 +116,7 @@ const Form = (
           loading: true,
         }).then(ret => {
           $.ret(ret).suc(() => {
-            const url = getRedirectUrl(redirectUrl)
+            const url = getRedirectUrl(redirectUrl, ret);
             if (url !== history.location.pathname) {
               history.push(url);
             }
@@ -146,7 +149,7 @@ Form.propTypes = {
   /**
    * 提交成功后跳转的地址，默认为上一级页面
    */
-  redirectUrl: PropTypes.string,
+  redirectUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 
   /**
    * 加载数据后的回调

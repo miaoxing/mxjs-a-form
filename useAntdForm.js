@@ -39,7 +39,7 @@ export default function useForm() {
   const wrapForm = React.useMemo(() => {
       return {
         ...form,
-        ...new FormApi
+        ...new FormApi,
       };
     },
     [form],

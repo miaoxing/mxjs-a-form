@@ -34,11 +34,11 @@ describe('useForm', () => {
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
       code: 1,
       message: 'success',
-      data: {}
+      data: {},
     })).mockImplementation(() => promise2.resolve({
       code: 1,
       message: 'success',
-      data: {}
+      data: {},
     }));
 
     const form = React.createRef();

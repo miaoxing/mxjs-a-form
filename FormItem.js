@@ -8,6 +8,7 @@ export default class extends React.Component {
     type: PropType.string,
     name: PropType.oneOfType([PropType.string, PropType.array]),
     required: PropType.bool,
+    messageVariables: PropType.objectOf(PropType.string),
   }
 
   renderChildren() {

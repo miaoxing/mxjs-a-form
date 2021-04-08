@@ -79,7 +79,7 @@ const Form = (
         // TODO 检查 ret
         const ret = await $.get(valuesUrl);
         if (afterLoad) {
-          afterLoad(ret);
+          await afterLoad(ret);
         }
         form.setFieldsValue(form.convertInput(filterValues(ret.data)));
       }

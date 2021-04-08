@@ -226,4 +226,32 @@ describe('Form', () => {
     expect($.http).toHaveBeenCalledTimes(1);
     expect($.http).toMatchSnapshot();
   });
+
+  test('afterLoad async', async () => {
+    const promise = createPromise();
+    $.get = jest.fn().mockImplementationOnce(() => promise.resolve({
+      data: {
+        foo: 3,
+        bar: 4,
+      },
+    }));
+
+    const {container} = render(<MemoryRouter>
+      <Form
+        valuesUrl="test"
+        afterLoad={async (ret) => {
+          ret.data.foo = 4;
+          ret.data.bar = 5;
+        }}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </MemoryRouter>);
+
+    await waitFor(() => {
+      expect(container.querySelector('#foo').value).toBe('4');
+      expect(container.querySelector('#bar').value).toBe('5');
+    });
+  });
 });

@@ -5,7 +5,7 @@ import React from 'react';
 import Form from '../Form';
 import FormItem from '../FormItem';
 import {MemoryRouter, Router} from 'react-router';
-import $ from 'miaoxing';
+import $, {Ret} from 'miaoxing';
 import {render, waitFor} from '@testing-library/react';
 import {createPromise} from '@mxjs/test';
 import {createMemoryHistory} from 'history';
@@ -147,6 +147,44 @@ describe('Form', () => {
     await promise;
 
     expect($.http).toHaveBeenCalledTimes(1);
+  });
+
+  test('afterSubmit', async () => {
+    const promise = createPromise();
+    const promise2 = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve(Ret.new({
+      code: 0,
+      message: 'success',
+    })));
+
+    let afterSubmitRet = {};
+    const form = React.createRef();
+    render(<MemoryRouter>
+      <Form
+        url="test"
+        initialValues={{
+          foo: 1,
+          bar: 2,
+        }}
+        formRef={form}
+        afterSubmit={(ret) => {
+          afterSubmitRet = ret;
+          promise2.resolve();
+        }}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </MemoryRouter>);
+
+    form.current.submit();
+
+    await promise2;
+
+    expect($.http).toHaveBeenCalledTimes(1);
+
+    expect(afterSubmitRet).toEqual({code: 0, message: 'success'});
   });
 
   test('redirectUrl fn', async () => {

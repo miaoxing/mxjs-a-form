@@ -55,6 +55,7 @@ const Form = (
     valuesUrl,
     afterLoad,
     beforeSubmit,
+    afterSubmit,
     trimSpaces,
     url,
     method,
@@ -116,6 +117,8 @@ const Form = (
           data: values,
           loading: true,
         }).then(ret => {
+          afterSubmit && afterSubmit(ret, form);
+
           $.ret(ret).suc(() => {
             if (redirect) {
               const url = getRedirectUrl(redirectUrl, ret);
@@ -168,6 +171,11 @@ Form.propTypes = {
    * 提交前回调
    */
   beforeSubmit: PropTypes.func,
+
+  /**
+   * 提交后回调
+   */
+  afterSubmit: PropTypes.func,
 
   /**
    * 渲染子组件

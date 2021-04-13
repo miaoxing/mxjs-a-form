@@ -41,7 +41,10 @@
     "@mxjs/test": "^0.1.5"
   },
   "dependencies": {
+    "@mxjs/box": "^0.1.0",
+    "@mxjs/a-clink": "^0.1.5",
     "@mxjs/cur-url": "^0.2.9",
+    "@mxjs/a-table": "^0.3.8",
     "all-trim": "^1.1.4",
     "antd": "^4.5.4",
     "miaoxing": "^0.2.2",

@@ -1,3 +1,28 @@
+## [0.2.13](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.12...v0.2.13) (2021-04-27)
+
+
+### Features
+
+* 增加 `afterSubmit` 回调，在请求成功后触发 ([a395df6](https://github.com/miaoxing/mxjs-a-form/commit/a395df6475263d2f7e229a4bc42442164a1f87a3))
+* **Form:** `afterLoad` 选项支持异步函数 ([56563bc](https://github.com/miaoxing/mxjs-a-form/commit/56563bc169a393ef997fef87d022270a8abeac5d))
+* `redirectUrl` 允许传入函数，根据返回值生成地址 ([dc77afd](https://github.com/miaoxing/mxjs-a-form/commit/dc77afda92916b032c2753c60760e867cbd4f998))
+* 增加 `redirect` 选项，用于控制提交表单后是否跳转页面 ([68a344e](https://github.com/miaoxing/mxjs-a-form/commit/68a344e99b086b30132950eabadf6f629d300b9c))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.1.0` to `0.2.0`
+* **@mxjs/a-clink:** upgrade from `0.1.5` to `0.1.6`
+* **@mxjs/cur-url:** upgrade from `0.2.9` to `0.2.10`
+* **@mxjs/a-table:** upgrade from `0.3.8` to `0.3.9`
+* **miaoxing:** upgrade from `0.2.2` to `0.2.3`
+* **babel-preset-miaoxing:** upgrade from `0.2.0` to `0.3.0`
+* **@miaoxing/dev:** upgrade from `6.3.4` to `6.4.0`
+* **@mxjs/test:** upgrade from `0.1.5` to `0.1.6`
+
 ## [0.2.12](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.11...v0.2.12) (2021-03-22)
 
 

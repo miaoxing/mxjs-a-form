@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/a-form",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "> TODO: description",
   "author": "twinh <twinhuang@qq.com>",
   "homepage": "https://github.com/twinh/miaoxing#readme",
@@ -36,17 +36,17 @@
     "@testing-library/react": "^11.2.6",
     "babel-jest": "^25.4.0",
     "babel-preset-miaoxing": "^0.4.0",
-    "@miaoxing/dev": "^7.0.0",
-    "@mxjs/test": "^0.1.7"
+    "@miaoxing/dev": "^7.0.1",
+    "@mxjs/test": "^0.1.8"
   },
   "dependencies": {
-    "@mxjs/box": "^0.2.1",
-    "@mxjs/a-clink": "^0.1.7",
-    "@mxjs/cur-url": "^0.2.11",
-    "@mxjs/a-table": "^0.3.10",
+    "@mxjs/box": "^0.2.2",
+    "@mxjs/a-clink": "^0.1.8",
+    "@mxjs/cur-url": "^0.2.12",
+    "@mxjs/a-table": "^0.3.11",
     "all-trim": "^1.1.4",
     "antd": "^4.15.2",
-    "miaoxing": "^0.2.4",
+    "miaoxing": "^0.2.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

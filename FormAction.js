@@ -4,10 +4,11 @@ import {Button, Form} from 'antd';
 import {Box} from '@mxjs/box';
 import PropType from 'prop-types';
 
-const FormAction = ({url, list = true}) => {
+const FormAction = ({url, list = true, ...props}) => {
   return (
     <Form.Item
       wrapperCol={{offset: 4, span: 8}}
+      {...props}
     >
       <Button htmlType="submit" type="primary">
         提交

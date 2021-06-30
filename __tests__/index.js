@@ -28,9 +28,11 @@ describe('Form', () => {
   test('valuesUrl', async () => {
     const promise = createPromise();
     $.get = jest.fn().mockImplementationOnce(() => promise.resolve({
-      data: {
-        foo: 3,
-        bar: 4,
+      ret: {
+        data: {
+          foo: 3,
+          bar: 4,
+        },
       },
     }));
 
@@ -53,8 +55,10 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 0,
-      message: 'success',
+      ret: {
+        code: 0,
+        message: 'success',
+      },
     }));
 
     const form = React.createRef();
@@ -89,8 +93,10 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 0,
-      message: 'success',
+      ret: {
+        code: 0,
+        message: 'success',
+      },
     }));
 
     const form = React.createRef();
@@ -120,8 +126,10 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 0,
-      message: 'success',
+      ret: {
+        code: 0,
+        message: 'success',
+      },
     }));
 
     const form = React.createRef();
@@ -150,10 +158,12 @@ describe('Form', () => {
     const promise = createPromise();
     const promise2 = createPromise();
 
-    $.http = jest.fn().mockImplementationOnce(() => promise.resolve(Ret.new({
-      code: 0,
-      message: 'success',
-    })));
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      ret: Ret.new({
+        code: 0,
+        message: 'success',
+      }),
+    }));
 
     let afterSubmitRet = {};
     const form = React.createRef();
@@ -188,8 +198,10 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 0,
-      message: 'success',
+      ret: {
+        code: 0,
+        message: 'success',
+      },
     }));
 
     const history = createMemoryHistory();
@@ -227,8 +239,10 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      code: 0,
-      message: 'success',
+      ret: {
+        code: 0,
+        message: 'success',
+      },
     }));
 
     const history = createMemoryHistory();
@@ -265,16 +279,18 @@ describe('Form', () => {
   test('afterLoad async', async () => {
     const promise = createPromise();
     $.get = jest.fn().mockImplementationOnce(() => promise.resolve({
-      data: {
-        foo: 3,
-        bar: 4,
+      ret: {
+        data: {
+          foo: 3,
+          bar: 4,
+        },
       },
     }));
 
     const {container} = render(<MemoryRouter>
       <Form
         valuesUrl="test"
-        afterLoad={async (ret) => {
+        afterLoad={async ({ret}) => {
           ret.data.foo = 4;
           ret.data.bar = 5;
         }}

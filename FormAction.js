@@ -1,4 +1,3 @@
-import React from 'react';
 import {CListBtn} from '@mxjs/a-clink';
 import {Button, Form} from 'antd';
 import {Box} from '@mxjs/box';

@@ -1,5 +1,5 @@
-import React from 'react';
+import { createContext } from 'react';
 
-const FormContext = React.createContext({});
+const FormContext = createContext({});
 
 export default FormContext;

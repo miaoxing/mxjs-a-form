@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import {Select as AntdSelect} from 'antd';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
 
 const {Option} = AntdSelect;
 
-class Select extends React.Component {
+class Select extends Component {
   renderOptions() {
     let options = [];
 

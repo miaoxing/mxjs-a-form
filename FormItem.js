@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import PropType from 'prop-types';
 import {Form, Input, InputNumber} from 'antd';
 
-export default class extends React.Component {
+export default class extends Component {
   static propTypes = {
     children: PropType.node,
     type: PropType.string,

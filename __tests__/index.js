@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef } from 'react';
 import Form from '../Form';
 import FormItem from '../FormItem';
 import {MemoryRouter, Router} from 'react-router';
@@ -61,7 +61,7 @@ describe('Form', () => {
       },
     }));
 
-    const form = React.createRef();
+    const form = createRef();
     render(<MemoryRouter>
       <Form
         url="test"
@@ -99,7 +99,7 @@ describe('Form', () => {
       },
     }));
 
-    const form = React.createRef();
+    const form = createRef();
     render(<MemoryRouter>
       <Form
         url="test"
@@ -132,7 +132,7 @@ describe('Form', () => {
       },
     }));
 
-    const form = React.createRef();
+    const form = createRef();
     render(<MemoryRouter>
       <Form
         url="test"
@@ -166,7 +166,7 @@ describe('Form', () => {
     }));
 
     let afterSubmitRet = {};
-    const form = React.createRef();
+    const form = createRef();
     render(<MemoryRouter>
       <Form
         url="test"
@@ -205,7 +205,7 @@ describe('Form', () => {
     }));
 
     const history = createMemoryHistory();
-    const form = React.createRef();
+    const form = createRef();
     render(<Router history={history}>
       <Form
         redirectUrl={(ret) => {
@@ -250,7 +250,7 @@ describe('Form', () => {
     history.push('/test');
     expect(history.length).toBe(2);
 
-    const form = React.createRef();
+    const form = createRef();
     render(<Router history={history}>
       <Form
         redirect={false}

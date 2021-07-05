@@ -1,4 +1,3 @@
-import React from 'react';
 import {withTable} from '@mxjs/a-table';
 import {Form, Row} from 'antd';
 import FormContext from './FormContext';

@@ -1,7 +1,7 @@
 /**
  * @experimental 名称容易冲突，可能要换成其他名字
  */
-import React from 'react';
+import { useMemo } from 'react';
 import {Form as AntdForm} from 'antd';
 
 class FormApi {
@@ -36,7 +36,7 @@ class FormApi {
 export default function useForm() {
   const [form] = AntdForm.useForm();
 
-  const wrapForm = React.useMemo(() => {
+  const wrapForm = useMemo(() => {
       return {
         ...form,
         ...new FormApi,

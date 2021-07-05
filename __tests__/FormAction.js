@@ -1,4 +1,3 @@
-import React from 'react';
 import FormAction from '../FormAction';
 import {MemoryRouter} from 'react-router';
 import {render} from '@testing-library/react';

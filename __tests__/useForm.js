@@ -1,7 +1,7 @@
 import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import {Form, FormItem} from '..';
-import React, {useEffect} from 'react';
+import { createRef, useEffect } from 'react';
 import $ from 'miaoxing';
 import {createPromise} from '@mxjs/test';
 import useForm from '../useForm';
@@ -42,7 +42,7 @@ describe('useForm', () => {
       },
     }));
 
-    const form = React.createRef();
+    const form = createRef();
     const {container, findByDisplayValue} = render(<MemoryRouter>
       <Form
         formRef={form}

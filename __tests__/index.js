@@ -1,4 +1,4 @@
-import { createRef } from 'react';
+import {createRef} from 'react';
 import Form from '../Form';
 import FormItem from '../FormItem';
 import {MemoryRouter, Router} from 'react-router';
@@ -159,10 +159,7 @@ describe('Form', () => {
     const promise2 = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: Ret.new({
-        code: 0,
-        message: 'success',
-      }),
+      ret: Ret.suc(),
     }));
 
     let afterSubmitRet = {};
@@ -191,7 +188,7 @@ describe('Form', () => {
 
     expect($.http).toHaveBeenCalledTimes(1);
 
-    expect(afterSubmitRet).toEqual({code: 0, message: 'success'});
+    expect(afterSubmitRet).toEqual(Ret.suc());
   });
 
   test('redirectUrl fn', async () => {

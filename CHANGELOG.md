@@ -1,3 +1,37 @@
+# [0.3.0](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.15...v0.3.0) (2021-10-28)
+
+
+### Code Refactoring
+
+* **a-form:** `Form` 组件 `afterLoad` 属性的参数由 `ret` 改为完整的 `response` 对象 ([2c87cff](https://github.com/miaoxing/mxjs-a-form/commit/2c87cff023f14deb2fc4cf98d3310ef0dd151268))
+
+
+### Features
+
+* `react` 依赖移到 `peerDependencies` 中，开发依赖使用 `react` 17 ([983eaeb](https://github.com/miaoxing/mxjs-a-form/commit/983eaeb1701e795c95b93541dc5a238bb2254605))
+* **a-form, FormAction:** 允许自定义 `Form.Item` 属性 ([15e3bca](https://github.com/miaoxing/mxjs-a-form/commit/15e3bca987cc031d6b9a9d263907758ec33826a7))
+
+
+### BREAKING CHANGES
+
+* `react` 依赖移到 `peerDependencies` 中，开发依赖使用 `react` 17
+* **a-form:** `Form` 组件 `afterLoad` 属性的参数由 `ret` 改为完整的 `response` 对象
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/a-clink:** upgrade from `0.1.8` to `0.2.0`
+* **@mxjs/cur-url:** upgrade from `0.2.12` to `0.2.13`
+* **@mxjs/a-table:** upgrade from `0.3.11` to `0.4.0`
+* **miaoxing:** upgrade from `0.2.5` to `0.3.0`
+* **babel-preset-miaoxing:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/dev:** upgrade from `7.0.1` to `8.0.0`
+* **@mxjs/test:** upgrade from `0.1.8` to `0.2.0`
+
 ## [0.2.15](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.14...v0.2.15) (2021-05-12)
 
 

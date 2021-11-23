@@ -12,7 +12,7 @@ const FormAction = ({url, list = true, ...props}) => {
       <Button htmlType="submit" type="primary">
         提交
       </Button>
-      <Box ml={3} display="inline-block">
+      <Box ml3 inlineBlock>
         {list && (url ? <Button href={url}>返回列表</Button> : <CListBtn/>)}
       </Box>
     </Form.Item>

@@ -54,6 +54,7 @@ export default class extends Component {
 
     return <Form.Item
       noStyle={type === 'hidden'}
+      required={required}
       rules={[{required: required}]}
       messageVariables={messageVariables}
       {...props}

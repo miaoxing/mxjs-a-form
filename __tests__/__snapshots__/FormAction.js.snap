@@ -23,13 +23,15 @@ exports[`FormAction custom offset 1`] = `
             </span>
           </button>
           <div
-            class="css-1pq8zek"
+            class="ml-12 inlineBlock"
           >
             <a
-              class="btn btn-secondary"
+              class="ant-btn"
               href="/"
             >
-              返回列表
+              <span>
+                返回列表
+              </span>
             </a>
           </div>
         </div>
@@ -62,13 +64,15 @@ exports[`FormAction render 1`] = `
             </span>
           </button>
           <div
-            class="css-1pq8zek"
+            class="ml-12 inlineBlock"
           >
             <a
-              class="btn btn-secondary"
+              class="ant-btn"
               href="/"
             >
-              返回列表
+              <span>
+                返回列表
+              </span>
             </a>
           </div>
         </div>

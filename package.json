@@ -64,6 +64,7 @@
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "jest-preset-miaoxing": "miaoxing/jest-preset-miaoxing",
     "@miaoxing/dev": "miaoxing/dev",
+    "@mxjs/a-button": "miaoxing/mxjs-a-button",
     "@mxjs/a-clink": "miaoxing/mxjs-a-clink"
   },
   "jest": {

@@ -38,7 +38,7 @@
     "@mxjs/cur-url": "^0.2.13",
     "@mxjs/a-table": "^0.4.0",
     "all-trim": "^1.1.4",
-    "antd": "^4.15.2",
+    "antd": "~4.17.4",
     "miaoxing": "^0.3.0",
     "prop-types": "^15.7.2",
     "react-router": "^5.2.0",

@@ -1,3 +1,30 @@
+## [0.3.1](https://github.com/miaoxing/mxjs-a-form/compare/v0.3.0...v0.3.1) (2022-01-12)
+
+
+### Bug Fixes
+
+* **a-form:** `FormItem` 不包含输入项时，设置了 `required` 未显示星号 ([beead22](https://github.com/miaoxing/mxjs-a-form/commit/beead2210841f8f7bca2cb0241ee432ccb0646d0))
+
+
+### Features
+
+* 更新 `antd` 到 `~4.17.4` ([f37ab56](https://github.com/miaoxing/mxjs-a-form/commit/f37ab5698754b024ba7eaf7832a84ed7c129ea3d))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.2.3` to `0.3.0`
+* **@mxjs/a-clink:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/cur-url:** upgrade from `0.2.13` to `0.2.14`
+* **@mxjs/a-table:** upgrade from `0.4.0` to `0.4.1`
+* **miaoxing:** upgrade from `0.3.0` to `0.4.0`
+* **babel-preset-miaoxing:** upgrade from `0.5.0` to `0.6.0`
+* **@miaoxing/dev:** upgrade from `8.0.0` to `8.0.1`
+* **@mxjs/test:** upgrade from `0.2.0` to `0.2.1`
+
 # [0.3.0](https://github.com/miaoxing/mxjs-a-form/compare/v0.2.15...v0.3.0) (2021-10-28)
 
 

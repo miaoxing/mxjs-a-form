@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import curUrl from '@mxjs/cur-url';
 import {Form as AntdForm} from 'antd';
@@ -67,6 +67,14 @@ const Form = (
 ) => {
   const [form] = useAntdForm();
   const history = useHistory();
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
 
   // 默认自动从后台读取数据
   useEffect(() => {
@@ -120,11 +128,11 @@ const Form = (
           afterSubmit && afterSubmit(ret, form);
 
           $.ret(ret).suc(() => {
+            if (!isMounted.current) {
+              return;
+            }
             if (redirect) {
-              const url = getRedirectUrl(redirectUrl, ret);
-              if (url !== history.location.pathname) {
-                history.push(url);
-              }
+              history.push(getRedirectUrl(redirectUrl, ret));
             }
           });
         });

@@ -1,3 +1,10 @@
+## [0.3.5](https://github.com/miaoxing/mxjs-a-form/compare/v0.3.4...v0.3.5) (2022-04-30)
+
+
+### Bug Fixes
+
+* **u, a-form:** 解决提交表单后离开页面，表单还继续执行跳转的问题 ([8ed3218](https://github.com/miaoxing/mxjs-a-form/commit/8ed3218fe93add735804a9cd1453419b15a5dede))
+
 ## [0.3.4](https://github.com/miaoxing/mxjs-a-form/compare/v0.3.3...v0.3.4) (2022-03-31)
 
 

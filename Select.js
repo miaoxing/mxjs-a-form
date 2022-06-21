@@ -1,47 +1,42 @@
-import { Component } from 'react';
 import {Select as AntdSelect} from 'antd';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
 
 const {Option} = AntdSelect;
 
-class Select extends Component {
-  renderOptions() {
-    let options = [];
+const renderOptions = (props) => {
+  let opts = [];
 
-    if (this.props.firstLabel) {
-      const firstValue = typeof this.props.firstValue !== 'undefined' ? this.props.firstValue : 0;
-      options.push(<Option key={firstValue} value={firstValue}>{this.props.firstLabel}</Option>);
-    }
-
-    if (this.props.all) {
-      options.push(<Option key="" value="">全部</Option>);
-    }
-
-    const isArray = Array.isArray(this.props.options);
-    map(this.props.options, (option, key) => {
-      if (typeof option === 'object') {
-        options.push(<Option key={option[this.props.valueKey]} value={option[this.props.valueKey]}>
-          {option[this.props.labelKey]}
-        </Option>);
-      } else if (isArray) {
-        options.push(<Option key={option} value={option}>{option}</Option>);
-      } else {
-        options.push(<Option key={key} value={key}>{option}</Option>);
-      }
-    });
-
-    return options;
+  if (props.firstLabel) {
+    const firstValue = typeof props.firstValue !== 'undefined' ? props.firstValue : 0;
+    opts.push(<Option key={firstValue} value={firstValue}>{props.firstLabel}</Option>);
   }
 
-  render() {
-    const {options, labelKey, valueKey, all, firstLabel, firstValue, ...props} = this.props;
-
-    return <AntdSelect {...props}>
-      {this.renderOptions()}
-    </AntdSelect>;
+  if (props.all) {
+    opts.push(<Option key="" value="">全部</Option>);
   }
-}
+
+  const isArray = Array.isArray(props.options);
+  map(props.options, (option, key) => {
+    if (typeof option === 'object') {
+      opts.push(<Option key={option[props.valueKey]} value={option[props.valueKey]}>
+        {option[props.labelKey]}
+      </Option>);
+    } else if (isArray) {
+      opts.push(<Option key={option} value={option}>{option}</Option>);
+    } else {
+      opts.push(<Option key={key} value={key}>{option}</Option>);
+    }
+  });
+
+  return opts;
+};
+
+const Select = ({options, labelKey, valueKey, all, firstLabel, firstValue, ...props}) => {
+  return <AntdSelect {...props}>
+    {renderOptions({options, labelKey, valueKey, all, firstLabel, firstValue})}
+  </AntdSelect>;
+};
 
 Select.defaultProps = {
   labelKey: 'label',

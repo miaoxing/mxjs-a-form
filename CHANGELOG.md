@@ -1,3 +1,25 @@
+# [1.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v0.3.7...v1.0.0) (2022-07-01)
+
+
+### Features
+
+* 发布 1.0.0 [release 1.0.0] ([43214b8](https://github.com/miaoxing/mxjs-a-form/commit/43214b80886d2dc7f6a0d0d825ae17731744b325))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.3.3` to `0.3.4`
+* **@mxjs/a-clink:** upgrade from `0.2.6` to `1.0.0`
+* **@mxjs/cur-url:** upgrade from `0.2.19` to `1.0.0`
+* **@mxjs/a-table:** upgrade from `0.4.6` to `1.0.0`
+* **miaoxing:** upgrade from `0.4.2` to `0.4.3`
+* **babel-preset-miaoxing:** upgrade from `0.6.0` to `0.6.1`
+* **@miaoxing/dev:** upgrade from `8.1.1` to `8.1.2`
+* **@mxjs/test:** upgrade from `0.2.6` to `1.0.0`
+
 ## [0.3.7](https://github.com/miaoxing/mxjs-a-form/compare/v0.3.6...v0.3.7) (2022-06-06)
 
 

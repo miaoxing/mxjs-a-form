@@ -56,6 +56,7 @@ const Form = (
     afterLoad,
     beforeSubmit,
     afterSubmit,
+    afterSuc,
     trimSpaces,
     url,
     method,
@@ -131,6 +132,7 @@ const Form = (
             if (!isMounted.current) {
               return;
             }
+            afterSuc && afterSuc(ret);
             if (redirect) {
               history.push(getRedirectUrl(redirectUrl, ret));
             }
@@ -184,6 +186,11 @@ Form.propTypes = {
    * 提交后回调
    */
   afterSubmit: PropTypes.func,
+
+  /**
+   * 提交后成功回调
+   */
+  afterSuc: PropTypes.func,
 
   /**
    * 渲染子组件

@@ -191,6 +191,43 @@ describe('Form', () => {
     expect(afterSubmitRet).toEqual(Ret.suc());
   });
 
+  test('afterSuc', async () => {
+    const promise = createPromise();
+    const promise2 = createPromise();
+
+    $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
+      ret: Ret.suc(),
+    }));
+
+    let afterSucRet = {};
+    const form = createRef();
+    render(<MemoryRouter>
+      <Form
+        url="test"
+        initialValues={{
+          foo: 1,
+          bar: 2,
+        }}
+        formRef={form}
+        afterSuc={(ret) => {
+          afterSucRet = ret;
+          promise2.resolve();
+        }}
+      >
+        <FormItem name="foo"/>
+        <FormItem name="bar"/>
+      </Form>
+    </MemoryRouter>);
+
+    form.current.submit();
+
+    await promise2;
+
+    expect($.http).toHaveBeenCalledTimes(1);
+
+    expect(afterSucRet).toEqual(Ret.suc());
+  });
+
   test('redirectUrl fn', async () => {
     const promise = createPromise();
 

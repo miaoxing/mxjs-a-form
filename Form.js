@@ -86,8 +86,12 @@ const Form = (
 
       valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
       if (valuesUrl !== false) {
-        // TODO 检查 ret
         const res = await $.get(valuesUrl);
+        if (res.ret.isErr()) {
+          $.ret(res.ret);
+          return;
+        }
+
         if (afterLoad) {
           await afterLoad(res);
         }

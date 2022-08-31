@@ -28,12 +28,12 @@ describe('Form', () => {
   test('valuesUrl', async () => {
     const promise = createPromise();
     $.get = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
+      ret: Ret.suc({
         data: {
           foo: 3,
           bar: 4,
         },
-      },
+      }),
     }));
 
     const {container} = render(<MemoryRouter>
@@ -55,10 +55,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 0,
-        message: 'success',
-      },
+      ret: Ret.suc(),
     }));
 
     const form = createRef();
@@ -93,10 +90,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 0,
-        message: 'success',
-      },
+      ret: Ret.suc(),
     }));
 
     const form = createRef();
@@ -126,10 +120,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 0,
-        message: 'success',
-      },
+      ret: Ret.suc(),
     }));
 
     const form = createRef();
@@ -232,10 +223,9 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 0,
+      ret: Ret.suc({
         message: 'success',
-      },
+      }),
     }));
 
     const history = createMemoryHistory();
@@ -273,10 +263,7 @@ describe('Form', () => {
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 0,
-        message: 'success',
-      },
+      ret: Ret.suc(),
     }));
 
     const history = createMemoryHistory();
@@ -313,12 +300,12 @@ describe('Form', () => {
   test('afterLoad async', async () => {
     const promise = createPromise();
     $.get = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
+      ret: Ret.suc({
         data: {
           foo: 3,
           bar: 4,
         },
-      },
+      }),
     }));
 
     const {container} = render(<MemoryRouter>

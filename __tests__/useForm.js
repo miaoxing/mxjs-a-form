@@ -2,7 +2,7 @@ import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import {Form, FormItem} from '..';
 import { createRef, useEffect } from 'react';
-import $ from 'miaoxing';
+import $, {Ret} from 'miaoxing';
 import {createPromise} from '@mxjs/test';
 import useForm from '../useForm';
 
@@ -29,17 +29,13 @@ describe('useForm', () => {
     const promise = createPromise();
     const promise2 = createPromise();
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
-      ret: {
-        code: 1,
-        message: 'success',
+      ret: Ret.suc({
         data: {},
-      },
+      }),
     })).mockImplementation(() => promise2.resolve({
-      ret: {
-        code: 1,
-        message: 'success',
+      ret: Ret.suc({
         data: {},
-      },
+      }),
     }));
 
     const form = createRef();

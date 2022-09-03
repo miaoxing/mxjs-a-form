@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.0.1...v1.1.0) (2022-09-03)
+
+
+### Bug Fixes
+
+* **a-form:** 表单加载数据出错时，展示提示 ([0f69402](https://github.com/miaoxing/mxjs-a-form/commit/0f6940231938ebb25d9a9601ca9d5408c803aa39))
+
+
+### Features
+
+* **a-form:** 增加 `afterSuc` 事件，用于提交表单成功后执行指定方法 ([fda7325](https://github.com/miaoxing/mxjs-a-form/commit/fda7325b907708ad084eb9ba7517514b227dedaf))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.0.1` to `1.0.2`
+
 ## [1.0.1](https://github.com/miaoxing/mxjs-a-form/compare/v1.0.0...v1.0.1) (2022-08-02)
 
 

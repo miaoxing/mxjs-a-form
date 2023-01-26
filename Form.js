@@ -86,7 +86,10 @@ const Form = (
 
       valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
       if (valuesUrl !== false) {
-        const res = await $.get(valuesUrl);
+        const res = await $.get({
+          url: valuesUrl,
+          loading: true,
+        });
         if (res.ret.isErr()) {
           $.ret(res.ret);
           return;

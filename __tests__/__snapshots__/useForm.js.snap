@@ -5,6 +5,7 @@ exports[`useForm converter 1`] = `
   "calls": Array [
     Array [
       Object {
+        "loading": true,
         "method": "get",
         "url": "",
       },

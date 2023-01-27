@@ -3,36 +3,40 @@
 exports[`FormAction custom offset 1`] = `
 <div>
   <div
-    class="ant-row ant-form-item"
+    class="ant-form-item"
   >
     <div
-      class="ant-col ant-col-offset-8 ant-form-item-control"
+      class="ant-row ant-form-item-row"
     >
       <div
-        class="ant-form-item-control-input"
+        class="ant-col ant-col-offset-8 ant-form-item-control"
       >
         <div
-          class="ant-form-item-control-input-content"
+          class="ant-form-item-control-input"
         >
-          <button
-            class="ant-btn ant-btn-primary"
-            type="submit"
-          >
-            <span>
-              提 交
-            </span>
-          </button>
           <div
-            class="ml-12 inlineBlock"
+            class="ant-form-item-control-input-content"
           >
-            <a
-              class="ant-btn"
-              href="/"
+            <button
+              class="ant-btn ant-btn-primary"
+              type="submit"
             >
               <span>
-                返回列表
+                提 交
               </span>
-            </a>
+            </button>
+            <div
+              class="ml-12 inlineBlock"
+            >
+              <a
+                class="ant-btn ant-btn-default"
+                href="/"
+              >
+                <span>
+                  返回列表
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -44,36 +48,40 @@ exports[`FormAction custom offset 1`] = `
 exports[`FormAction render 1`] = `
 <div>
   <div
-    class="ant-row ant-form-item"
+    class="ant-form-item"
   >
     <div
-      class="ant-col ant-col-8 ant-col-offset-4 ant-form-item-control"
+      class="ant-row ant-form-item-row"
     >
       <div
-        class="ant-form-item-control-input"
+        class="ant-col ant-col-8 ant-col-offset-4 ant-form-item-control"
       >
         <div
-          class="ant-form-item-control-input-content"
+          class="ant-form-item-control-input"
         >
-          <button
-            class="ant-btn ant-btn-primary"
-            type="submit"
-          >
-            <span>
-              提 交
-            </span>
-          </button>
           <div
-            class="ml-12 inlineBlock"
+            class="ant-form-item-control-input-content"
           >
-            <a
-              class="ant-btn"
-              href="/"
+            <button
+              class="ant-btn ant-btn-primary"
+              type="submit"
             >
               <span>
-                返回列表
+                提 交
               </span>
-            </a>
+            </button>
+            <div
+              class="ml-12 inlineBlock"
+            >
+              <a
+                class="ant-btn ant-btn-default"
+                href="/"
+              >
+                <span>
+                  返回列表
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

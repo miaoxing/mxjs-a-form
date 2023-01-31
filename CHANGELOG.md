@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.1.5...v1.2.0) (2023-01-31)
+
+
+### Features
+
+* 更新 `antd` 到 `~4.24.7` ([2cfb84d](https://github.com/miaoxing/mxjs-a-form/commit/2cfb84d3624ef59eac98bf266f11a3a407fd8158))
+* **a-form:** 表单加载数据时，展示 loading ([41cc757](https://github.com/miaoxing/mxjs-a-form/commit/41cc757e41a6808eed4bd19ab786c5bd384678f5))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `1.1.3` to `1.1.4`
+* **@mxjs/a-table:** upgrade from `1.2.1` to `1.3.0`
+
 ## [1.1.5](https://github.com/miaoxing/mxjs-a-form/compare/v1.1.4...v1.1.5) (2023-01-01)
 
 

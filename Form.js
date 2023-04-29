@@ -55,6 +55,7 @@ const Form = (
     valuesUrl,
     afterLoad,
     beforeSubmit,
+    onSubmit,
     afterSubmit,
     afterSuc,
     trimSpaces,
@@ -114,7 +115,7 @@ const Form = (
       labelCol={{span: 4}}
       wrapperCol={{span: 8}}
       scrollToFirstError={true}
-      onFinish={(values) => {
+      onFinish={async (values) => {
         values = form.convertOutput(values);
 
         if (beforeSubmit) {
@@ -126,6 +127,12 @@ const Form = (
 
         if (trimSpaces) {
           values = allTrim(values);
+        }
+
+        if (onSubmit) {
+          const ret = await onSubmit(values);
+          afterSubmit && afterSubmit(ret, form);
+          return;
         }
 
         $.http({
@@ -188,6 +195,11 @@ Form.propTypes = {
    * 提交前回调
    */
   beforeSubmit: PropTypes.func,
+
+  /**
+   * 自定义提交流程
+   */
+  onSubmit: PropTypes.func,
 
   /**
    * 提交后回调

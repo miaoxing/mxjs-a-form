@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.2.2...v1.3.0) (2023-04-30)
+
+
+### Features
+
+* **a-form:** `Form` 增加 `onSubmit` 属性，用于自定义提交流程 ([7f9c96d](https://github.com/miaoxing/mxjs-a-form/commit/7f9c96df1a9abddb73ad0d5f901289bab06503a9))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.4.1` to `1.4.2`
+
 ## [1.2.2](https://github.com/miaoxing/mxjs-a-form/compare/v1.2.1...v1.2.2) (2023-04-18)
 
 

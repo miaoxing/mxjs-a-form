@@ -1,3 +1,26 @@
+# [1.4.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.3.0...v1.4.0) (2023-05-31)
+
+
+### Features
+
+* **a-form:** 增加导出 `FormList` 和 `FormErrorList` ([893c171](https://github.com/miaoxing/mxjs-a-form/commit/893c17186a45f21e3eea3b9cad4848007b3d0d8b))
+* **antd5:** 更新 `antd` 到 `5.1.6` ([d84e12e](https://github.com/miaoxing/mxjs-a-form/commit/d84e12ef5514cb28d23653965833c09d830e40bf))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.3.6` to `0.3.7`
+* **@mxjs/a-clink:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/cur-url:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/a-table:** upgrade from `1.4.2` to `1.5.0`
+* **miaoxing:** upgrade from `0.4.6` to `0.4.7`
+* **babel-preset-miaoxing:** upgrade from `0.6.1` to `0.7.0`
+* **@miaoxing/dev:** upgrade from `8.2.0` to `8.2.1`
+* **@mxjs/test:** upgrade from `1.0.3` to `1.0.4`
+
 # [1.3.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.2.2...v1.3.0) (2023-04-30)
 
 

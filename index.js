@@ -8,5 +8,6 @@ export SearchForm from './SearchForm';
 export SearchItem from './SearchItem';
 export Select from './Select';
 export useForm from './useForm';
+export ModalForm from './ModalForm';
 export const FormList = AntdForm.List;
 export const FormErrorList = AntdForm.ErrorList;

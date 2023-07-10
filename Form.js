@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 import curUrl from '@mxjs/cur-url';
 import {Form as AntdForm} from 'antd';
@@ -70,6 +70,7 @@ const Form = (
   const [form] = useAntdForm();
   const history = useHistory();
   const isMounted = useRef(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     isMounted.current = true;
@@ -107,7 +108,7 @@ const Form = (
     fetchData();
   }, [initialValues]);
 
-  return <FormContext.Provider value={form}>
+  return <FormContext.Provider value={{...form, loading}}>
     <AntdForm
       form={form}
       ref={formRef}
@@ -125,12 +126,14 @@ const Form = (
           }
         }
 
+        setLoading(true);
         if (trimSpaces) {
           values = allTrim(values);
         }
 
         if (onSubmit) {
           const ret = await onSubmit(values);
+          setLoading(false);
           afterSubmit && afterSubmit(ret, form);
           return;
         }
@@ -140,6 +143,7 @@ const Form = (
           data: values,
           loading: true,
         }).then(({ret}) => {
+          setLoading(false);
           afterSubmit && afterSubmit(ret, form);
 
           $.ret(ret).suc(() => {
@@ -151,6 +155,9 @@ const Form = (
               history.push(getRedirectUrl(redirectUrl, ret));
             }
           });
+        }).catch(e => {
+          setLoading(false);
+          throw e;
         });
       }}
       {...rest}

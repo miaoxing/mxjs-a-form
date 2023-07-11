@@ -55,6 +55,7 @@ const Form = (
     valuesUrl,
     afterLoad,
     beforeSubmit,
+    onLoadingChange,
     onSubmit,
     afterSubmit,
     afterSuc,
@@ -70,7 +71,12 @@ const Form = (
   const [form] = useAntdForm();
   const history = useHistory();
   const isMounted = useRef(false);
+
   const [loading, setLoading] = useState(false);
+  const changeLoading = (loading) => {
+    setLoading(loading);
+    onLoadingChange && onLoadingChange(loading);
+  };
 
   useEffect(() => {
     isMounted.current = true;
@@ -126,14 +132,14 @@ const Form = (
           }
         }
 
-        setLoading(true);
+        changeLoading(true);
         if (trimSpaces) {
           values = allTrim(values);
         }
 
         if (onSubmit) {
           const ret = await onSubmit(values);
-          setLoading(false);
+          changeLoading(false);
           afterSubmit && afterSubmit(ret, form);
           return;
         }
@@ -143,7 +149,7 @@ const Form = (
           data: values,
           loading: true,
         }).then(({ret}) => {
-          setLoading(false);
+          changeLoading(false);
           afterSubmit && afterSubmit(ret, form);
 
           $.ret(ret).suc(() => {
@@ -156,7 +162,7 @@ const Form = (
             }
           });
         }).catch(e => {
-          setLoading(false);
+          changeLoading(false);
           throw e;
         });
       }}
@@ -197,6 +203,11 @@ Form.propTypes = {
    * 加载数据后的回调
    */
   afterLoad: PropTypes.func,
+
+  /**
+   * 加载中状态变化的回调
+   */
+  onLoadingChange: PropTypes.func,
 
   /**
    * 提交前回调

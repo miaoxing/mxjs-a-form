@@ -2,7 +2,7 @@
  * @experimental 名称容易冲突，可能要换成其他名字
  */
 import { useMemo } from 'react';
-import {Form as AntdForm} from 'antd';
+import {Form} from 'antd';
 
 class FormApi {
   outputConverters = [];
@@ -34,7 +34,7 @@ class FormApi {
 }
 
 export default function useForm() {
-  const [form] = AntdForm.useForm();
+  const [form] = Form.useForm();
 
   const wrapForm = useMemo(() => {
       return {

@@ -1,3 +1,26 @@
+# [1.5.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.4.1...v1.5.0) (2023-07-31)
+
+
+### Features
+
+* **a-form:** 增加 `ModalForm` 组件 ([65ceadb](https://github.com/miaoxing/mxjs-a-form/commit/65ceadbb3970f8ec0818998a6c46facfcdf2c888))
+* **a-form:** 增加 `onLoadingChange` 属性，允许外部获取表单加载中的状态 ([d5f4f48](https://github.com/miaoxing/mxjs-a-form/commit/d5f4f48b0bcbbebc68d5eb2ab58c952031aefc37))
+* **a-form:** 提交表单时，按钮显示加载中状态 ([5af9591](https://github.com/miaoxing/mxjs-a-form/commit/5af9591da59933420a06cf6d3f2dc474b93a1a20))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.3.7` to `0.3.8`
+* **@mxjs/a-clink:** upgrade from `2.0.0` to `2.0.1`
+* **@mxjs/cur-url:** upgrade from `1.0.5` to `1.0.6`
+* **@mxjs/a-table:** upgrade from `1.5.1` to `1.5.2`
+* **miaoxing:** upgrade from `0.4.7` to `0.4.8`
+* **@miaoxing/dev:** upgrade from `8.2.1` to `8.2.2`
+* **@mxjs/test:** upgrade from `1.0.5` to `1.0.6`
+
 ## [1.4.1](https://github.com/miaoxing/mxjs-a-form/compare/v1.4.0...v1.4.1) (2023-06-30)
 
 

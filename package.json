@@ -24,6 +24,7 @@
     "@mxjs/box": "^0.3.8",
     "@mxjs/a-clink": "^2.0.1",
     "@mxjs/cur-url": "^1.0.6",
+    "@mxjs/a-input": "^1.0.2",
     "@mxjs/a-table": "^1.5.2",
     "all-trim": "^1.1.4",
     "antd": "~5.1.6",

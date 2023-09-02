@@ -1,3 +1,25 @@
+# [1.6.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.5.0...v1.6.0) (2023-09-02)
+
+
+### Features
+
+* **a-form:** `FormItem` 使用 `@mxjs/a-input` 的 `Input` 组件，默认会过滤输入值的空格 ([a2786db](https://github.com/miaoxing/mxjs-a-form/commit/a2786db9c867293c246e4813c13faa11876fe58e))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/box:** upgrade from `0.3.8` to `0.3.9`
+* **@mxjs/a-clink:** upgrade from `2.0.1` to `2.0.2`
+* **@mxjs/cur-url:** upgrade from `1.0.6` to `1.0.7`
+* **@mxjs/a-input:** upgrade from `1.2.1` to `1.3.0`
+* **@mxjs/a-table:** upgrade from `1.5.2` to `1.5.3`
+* **miaoxing:** upgrade from `0.4.8` to `0.4.9`
+* **@miaoxing/dev:** upgrade from `8.2.2` to `8.2.3`
+* **@mxjs/test:** upgrade from `1.0.6` to `1.0.7`
+
 # [1.5.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.4.1...v1.5.0) (2023-07-31)
 
 

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropType from 'prop-types';
-import {Form, InputNumber} from 'antd';
+import { Form, InputNumber } from 'antd';
 import Input from '@mxjs/a-input';
 
 export default class extends Component {
@@ -10,6 +10,10 @@ export default class extends Component {
     name: PropType.oneOfType([PropType.string, PropType.array]),
     required: PropType.bool,
     messageVariables: PropType.objectOf(PropType.string),
+  }
+
+  static defaultProps = {
+    type: 'text',
   }
 
   renderChildren() {
@@ -33,7 +37,7 @@ export default class extends Component {
         return <Input.TextArea/>;
 
       default:
-        return <Input/>;
+        return <Input type={this.props.type}/>;
     }
   }
 

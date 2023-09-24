@@ -10,6 +10,7 @@ export default class extends Component {
     name: PropType.oneOfType([PropType.string, PropType.array]),
     required: PropType.bool,
     messageVariables: PropType.objectOf(PropType.string),
+    controlProps: PropType.object,
   }
 
   static defaultProps = {
@@ -25,19 +26,19 @@ export default class extends Component {
         return ({getFieldValue}) => getFieldValue(this.props.name);
 
       case this.props.type === 'password':
-        return <Input.Password/>;
+        return <Input.Password {...this.props.controlProps}/>;
 
       case this.props.type === 'hidden':
-        return <Input type="hidden"/>;
+        return <Input type="hidden" {...this.props.controlProps}/>;
 
       case this.props.type === 'number':
-        return <InputNumber/>;
+        return <InputNumber {...this.props.controlProps}/>;
 
       case this.props.type === 'textarea':
-        return <Input.TextArea/>;
+        return <Input.TextArea {...this.props.controlProps}/>;
 
       default:
-        return <Input type={this.props.type}/>;
+        return <Input type={this.props.type} {...this.props.controlProps}/>;
     }
   }
 

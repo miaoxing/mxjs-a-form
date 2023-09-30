@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.6.0...v1.7.0) (2023-09-30)
+
+
+### Features
+
+* **a-form:** `FormItem` 支持传入 `controlProps` 属性 ([c2533c3](https://github.com/miaoxing/mxjs-a-form/commit/c2533c3353e243e72f4dbd161804a1417a752883))
+* **a-form:** `FormItem` 支持传入自定义的类型，如 `email` ([44e291d](https://github.com/miaoxing/mxjs-a-form/commit/44e291d588d5b62ec926fa2738a869c0381694f0))
+
 # [1.6.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.5.0...v1.6.0) (2023-09-02)
 
 

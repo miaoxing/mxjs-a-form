@@ -14,7 +14,8 @@ const SearchForm = withTable(({children, table, filterValues, ...rest}) => {
         wrapperCol={{span: 16}}
         onValuesChange={(changedValues, allValues) => {
           const values = form.convertOutput(filterValues ? filterValues(allValues, changedValues) : allValues);
-          table.handleSearch(values);
+          table.addSearch(values);
+          table.reload();
         }}
         {...rest}
       >

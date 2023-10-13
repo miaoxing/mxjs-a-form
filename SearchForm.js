@@ -1,9 +1,10 @@
-import {withTable} from '@mxjs/a-table';
-import {Form, Row} from 'antd';
+import { withTable } from '@mxjs/a-table';
+import { Button, Col, Form, Row } from 'antd';
 import FormContext from './FormContext';
 import useAntdForm from './useAntdForm';
+import { SearchItem } from './index';
 
-const SearchForm = withTable(({children, table, filterValues, ...rest}) => {
+const SearchForm = withTable(({children, table, filterValues, actions, ...rest}) => {
   const [form] = useAntdForm();
 
   return (
@@ -12,8 +13,8 @@ const SearchForm = withTable(({children, table, filterValues, ...rest}) => {
         form={form}
         labelCol={{span: 8}}
         wrapperCol={{span: 16}}
-        onValuesChange={(changedValues, allValues) => {
-          const values = form.convertOutput(filterValues ? filterValues(allValues, changedValues) : allValues);
+        onFinish={(allValues) => {
+          const values = form.convertOutput(filterValues ? filterValues(allValues) : allValues);
           table.addSearch(values);
           table.reload();
         }}
@@ -21,6 +22,13 @@ const SearchForm = withTable(({children, table, filterValues, ...rest}) => {
       >
         <Row>
           {children}
+          <Col span={24}>
+            <SearchItem wrapperCol={{offset: 8}}>
+              <Button htmlType="submit">
+                搜索
+              </Button>
+            </SearchItem>
+          </Col>
         </Row>
       </Form>
     </FormContext.Provider>

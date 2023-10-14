@@ -1,5 +1,5 @@
 import { withTable } from '@mxjs/a-table';
-import { Button, Col, Form, Row } from 'antd';
+import { Button, Col, Form, Row, Space } from 'antd';
 import FormContext from './FormContext';
 import useAntdForm from './useAntdForm';
 import { SearchItem } from './index';
@@ -24,9 +24,12 @@ const SearchForm = withTable(({children, table, filterValues, actions, ...rest})
           {children}
           <Col span={24}>
             <SearchItem wrapperCol={{offset: 8}}>
-              <Button htmlType="submit">
-                搜索
-              </Button>
+              <Space>
+                <Button htmlType="submit">
+                  搜索
+                </Button>
+                {actions}
+              </Space>
             </SearchItem>
           </Col>
         </Row>

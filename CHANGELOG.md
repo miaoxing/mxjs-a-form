@@ -1,3 +1,25 @@
+# [2.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.7.0...v2.0.0) (2023-11-02)
+
+
+### Features
+
+* **a-form:** `SearchForm` 允许传入 `actions` 来增加操作按钮 ([2e292a4](https://github.com/miaoxing/mxjs-a-form/commit/2e292a48172dc706801a87ef427eb493ec028b9d))
+* **a-form:** `SearchForm` 默认显示搜索按钮，触发后才执行搜索 ([7b61b30](https://github.com/miaoxing/mxjs-a-form/commit/7b61b30aeed51995d8ccaeb11830987e2e2d78b5))
+* **a-form:** 表单搜索时，改为调用 `addSearch`，以便允许外部添加参数 ([f72a000](https://github.com/miaoxing/mxjs-a-form/commit/f72a000f819530814949790b346e56bf43a3df61))
+
+
+### BREAKING CHANGES
+
+* **a-form:** `SearchForm` 默认显示搜索按钮，触发后才执行搜索
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.5.3` to `1.6.0`
+
 # [1.7.0](https://github.com/miaoxing/mxjs-a-form/compare/v1.6.0...v1.7.0) (2023-09-30)
 
 

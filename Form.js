@@ -152,7 +152,8 @@ const Form = (
           changeLoading(false);
           afterSubmit && afterSubmit(ret, form);
 
-          $.ret(ret).suc(() => {
+          $.ret(ret);
+          if (ret.isSuc()) {
             if (!isMounted.current) {
               return;
             }
@@ -160,7 +161,7 @@ const Form = (
             if (redirect) {
               history.push(getRedirectUrl(redirectUrl, ret));
             }
-          });
+          }
         }).catch(e => {
           changeLoading(false);
           throw e;

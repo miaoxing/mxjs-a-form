@@ -17,25 +17,34 @@ exports[`FormAction custom offset 1`] = `
           <div
             class="ant-form-item-control-input-content"
           >
-            <button
-              class="ant-btn ant-btn-primary"
-              type="submit"
-            >
-              <span>
-                提 交
-              </span>
-            </button>
             <div
-              class="ml-12 inlineBlock"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
-              <a
-                class="ant-btn ant-btn-default"
-                href="/"
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
               >
-                <span>
-                  返回列表
-                </span>
-              </a>
+                <button
+                  class="ant-btn ant-btn-primary"
+                  type="submit"
+                >
+                  <span>
+                    提 交
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <a
+                  class="ant-btn ant-btn-default"
+                  href="/"
+                >
+                  <span>
+                    返回列表
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -62,25 +71,34 @@ exports[`FormAction render 1`] = `
           <div
             class="ant-form-item-control-input-content"
           >
-            <button
-              class="ant-btn ant-btn-primary"
-              type="submit"
-            >
-              <span>
-                提 交
-              </span>
-            </button>
             <div
-              class="ml-12 inlineBlock"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
-              <a
-                class="ant-btn ant-btn-default"
-                href="/"
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
               >
-                <span>
-                  返回列表
-                </span>
-              </a>
+                <button
+                  class="ant-btn ant-btn-primary"
+                  type="submit"
+                >
+                  <span>
+                    提 交
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <a
+                  class="ant-btn ant-btn-default"
+                  href="/"
+                >
+                  <span>
+                    返回列表
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

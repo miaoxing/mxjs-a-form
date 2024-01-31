@@ -1,3 +1,22 @@
+# [2.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v2.0.3...v2.1.0) (2024-01-31)
+
+
+### Features
+
+* **a-form:** `Form` 提交成功后立即跳转 ([ec64f76](https://github.com/miaoxing/mxjs-a-form/commit/ec64f76e4db1fe35be50e4b55bdd7849e7f74896))
+* **a-form:** `FormAction` 移除 `@mxjs/box` 依赖 ([ff083cd](https://github.com/miaoxing/mxjs-a-form/commit/ff083cdf5a7aaa4c072b6d9742f99dfa46d04aa0))
+* 更新 `react` 支持 18 ([86a1148](https://github.com/miaoxing/mxjs-a-form/commit/86a11488add137262ab2af955f1178f9d3a7074c))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `2.0.5` to `2.1.0`
+* **@mxjs/a-input:** upgrade from `1.3.3` to `1.4.0`
+* **@mxjs/a-table:** upgrade from `1.6.3` to `1.7.0`
+
 ## [2.0.3](https://github.com/miaoxing/mxjs-a-form/compare/v2.0.2...v2.0.3) (2024-01-08)
 
 

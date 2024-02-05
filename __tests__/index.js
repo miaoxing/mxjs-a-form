@@ -47,7 +47,10 @@ describe('Form', () => {
 
     await promise;
 
-    expect(container.querySelector('#foo').value).toBe('3');
+    await waitFor(() => {
+      expect(container.querySelector('#foo').value).toBe('3');
+    });
+
     expect(container.querySelector('#bar').value).toBe('4');
   });
 

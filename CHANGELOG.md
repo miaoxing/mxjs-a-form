@@ -1,3 +1,20 @@
+# [2.2.0](https://github.com/miaoxing/mxjs-a-form/compare/v2.1.0...v2.2.0) (2024-02-20)
+
+
+### Features
+
+* 更新 antd, antd icons 版本 ([a32727b](https://github.com/miaoxing/mxjs-a-form/commit/a32727be1725be37819bad94ff2a92e23e71de53))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `2.1.0` to `2.1.1`
+* **@mxjs/a-input:** upgrade from `1.4.0` to `1.5.0`
+* **@mxjs/a-table:** upgrade from `1.7.0` to `1.8.0`
+
 # [2.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v2.0.3...v2.1.0) (2024-01-31)
 
 

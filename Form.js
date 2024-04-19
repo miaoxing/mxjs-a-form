@@ -6,7 +6,6 @@ import $ from 'miaoxing';
 import allTrim from 'all-trim';
 import FormContext from './FormContext';
 import useAntdForm from './useAntdForm';
-import {useHistory} from 'react-router';
 
 /**
  * 将输入项的值从 null 转换为空字符,因为 React input 值不允许为 null
@@ -69,7 +68,6 @@ const Form = (
   },
 ) => {
   const [form] = useAntdForm();
-  const history = useHistory();
   const isMounted = useRef(false);
 
   const [loading, setLoading] = useState(false);
@@ -159,7 +157,7 @@ const Form = (
             }
             afterSuc && afterSuc(ret);
             if (redirect) {
-              history.push(getRedirectUrl(redirectUrl, ret));
+              $.to(getRedirectUrl(redirectUrl, ret));
             }
           }
         }).catch(e => {

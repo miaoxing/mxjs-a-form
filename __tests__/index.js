@@ -4,7 +4,7 @@ import FormItem from '../FormItem';
 import {MemoryRouter, Router} from 'react-router';
 import $, {Ret} from 'miaoxing';
 import {render, waitFor} from '@testing-library/react';
-import {createPromise} from '@mxjs/test';
+import { createPromise, bootstrap, setUrl } from '@mxjs/test';
 import {createMemoryHistory} from 'history';
 
 describe('Form', () => {
@@ -223,6 +223,9 @@ describe('Form', () => {
   });
 
   test('redirectUrl fn', async () => {
+    bootstrap();
+    setUrl('/');
+
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
@@ -231,9 +234,8 @@ describe('Form', () => {
       }),
     }));
 
-    const history = createMemoryHistory();
     const form = createRef();
-    render(<Router history={history}>
+    render(<MemoryRouter>
       <Form
         redirectUrl={(ret) => {
           return 'url/' + ret.message + '/' + ret.code;
@@ -248,14 +250,14 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </Router>);
+    </MemoryRouter>);
 
     form.current.submit();
 
     await promise;
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe('/url/success/0');
+      expect(window.location.href).toBe('/url/success/0');
     });
 
     expect($.http).toHaveBeenCalledTimes(1);
@@ -263,19 +265,16 @@ describe('Form', () => {
   });
 
   test('redirect', async () => {
+    expect(window.location.href).toBe('http://localhost/');
+
     const promise = createPromise();
 
     $.http = jest.fn().mockImplementationOnce(() => promise.resolve({
       ret: Ret.suc(),
     }));
 
-    const history = createMemoryHistory();
-
-    history.push('/test');
-    expect(history.length).toBe(2);
-
     const form = createRef();
-    render(<Router history={history}>
+    render(<MemoryRouter>
       <Form
         redirect={false}
         url="test"
@@ -284,7 +283,7 @@ describe('Form', () => {
       >
         <FormItem name="foo"/>
       </Form>
-    </Router>);
+    </MemoryRouter>);
 
     form.current.submit();
 
@@ -293,8 +292,8 @@ describe('Form', () => {
     // wait for $.ret(ret).suc() to execute
     await new Promise(r => setTimeout(r, 100));
 
-    expect(history.length).toBe(2);
-    expect(history.location.pathname).toBe('/test');
+    // wont change
+    expect(window.location.href).toBe('http://localhost/');
 
     expect($.http).toHaveBeenCalledTimes(1);
     expect($.http).toMatchSnapshot();

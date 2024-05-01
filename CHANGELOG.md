@@ -1,3 +1,27 @@
+# [3.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v2.2.1...v3.0.0) (2024-05-01)
+
+
+### Features
+
+* 更新 `react-router` 到 v6 ([8663bf6](https://github.com/miaoxing/mxjs-a-form/commit/8663bf6a52c7b880a9d97f7fc6cd16140d9c23ed))
+
+
+### BREAKING CHANGES
+
+* 更新 `react-router` 到 v6
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `2.1.2` to `3.0.0`
+* **@mxjs/cur-url:** upgrade from `1.0.11` to `1.0.12`
+* **@mxjs/a-table:** upgrade from `1.8.1` to `1.8.2`
+* **miaoxing:** upgrade from `0.4.13` to `0.4.14`
+* **@mxjs/test:** upgrade from `1.0.11` to `1.1.0`
+
 ## [2.2.1](https://github.com/miaoxing/mxjs-a-form/compare/v2.2.0...v2.2.1) (2024-03-31)
 
 

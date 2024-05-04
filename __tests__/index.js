@@ -1,11 +1,10 @@
-import {createRef} from 'react';
+import { createRef } from 'react';
 import Form from '../Form';
 import FormItem from '../FormItem';
-import {MemoryRouter, Router} from 'react-router';
-import $, {Ret} from 'miaoxing';
-import {render, waitFor} from '@testing-library/react';
-import { createPromise, bootstrap, setUrl } from '@mxjs/test';
-import {createMemoryHistory} from 'history';
+import { MemoryRouter } from 'react-router';
+import $, { Ret } from 'miaoxing';
+import { render, waitFor } from '@testing-library/react';
+import { bootstrap, createPromise, setUrl } from '@mxjs/test';
 
 describe('Form', () => {
   test('initialValues', async () => {

@@ -264,6 +264,8 @@ describe('Form', () => {
   });
 
   test('redirect', async () => {
+    setUrl('/');
+
     expect(window.location.href).toBe('http://localhost/');
 
     const promise = createPromise();

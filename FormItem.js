@@ -43,7 +43,7 @@ export default class extends Component {
   }
 
   render() {
-    let {required, type, name, messageVariables = {}, ...props} = this.props;
+    let {required, type, name, messageVariables = {}, controlProps, ...props} = this.props;
 
     if (type === 'plain') {
       // 纯文本使用了自定义内容，需启用 shouldUpdate

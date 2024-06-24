@@ -1,7 +1,7 @@
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import curUrl from '@mxjs/cur-url';
-import {Form as AntdForm} from 'antd';
+import { Form as AntdForm } from 'antd';
 import $ from 'miaoxing';
 import allTrim from 'all-trim';
 import FormContext from './FormContext';
@@ -11,7 +11,7 @@ import useAntdForm from './useAntdForm';
  * 将输入项的值从 null 转换为空字符,因为 React input 值不允许为 null
  *s
  * @param {object} data
- * @returns Store
+ * @returns {object}
  */
 function filterValues(data) {
   Object.keys(data).forEach(key => {
@@ -50,7 +50,6 @@ function getRedirectUrl(redirectUrl, ret) {
 const Form = (
   {
     children,
-    initialValues,
     valuesUrl,
     afterLoad,
     beforeSubmit,
@@ -83,93 +82,99 @@ const Form = (
     };
   }, []);
 
+  const loadInitialValues = async () => {
+    if (rest.initialValues) {
+      return;
+    }
+
+    valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
+    if (valuesUrl === false) {
+      return;
+    }
+
+    const res = await $.get({
+      url: valuesUrl,
+      loading: true,
+    });
+    if (res.ret.isErr()) {
+      $.ret(res.ret);
+      return;
+    }
+
+    if (afterLoad) {
+      await afterLoad(res);
+    }
+    form.setFieldsValue(form.convertInput(filterValues(res.ret.data)));
+  };
+
   // 默认自动从后台读取数据
   useEffect(() => {
-    async function fetchData() {
-      if (initialValues) {
+    loadInitialValues();
+  }, [rest.initialValues]);
+
+  const handleFinish = async (values) => {
+    changeLoading(true);
+    try {
+      await handleSubmit(values);
+    } finally {
+      changeLoading(false);
+    }
+  };
+
+  const handleSubmit = async (values) => {
+    values = form.convertOutput(values);
+
+    if (beforeSubmit) {
+      values = beforeSubmit(values);
+      if (values === false) {
         return;
-      }
-
-      valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
-      if (valuesUrl !== false) {
-        const res = await $.get({
-          url: valuesUrl,
-          loading: true,
-        });
-        if (res.ret.isErr()) {
-          $.ret(res.ret);
-          return;
-        }
-
-        if (afterLoad) {
-          await afterLoad(res);
-        }
-        form.setFieldsValue(form.convertInput(filterValues(res.ret.data)));
       }
     }
 
-    // noinspection JSIgnoredPromiseFromCall
-    fetchData();
-  }, [initialValues]);
+    if (trimSpaces) {
+      values = allTrim(values);
+    }
 
-  return <FormContext.Provider value={{...form, loading}}>
-    <AntdForm
-      form={form}
-      ref={formRef}
-      initialValues={initialValues}
-      labelCol={{span: 4}}
-      wrapperCol={{span: 8}}
-      scrollToFirstError={true}
-      onFinish={async (values) => {
-        values = form.convertOutput(values);
+    if (onSubmit) {
+      const ret = await onSubmit(values);
+      afterSubmit && afterSubmit(ret, form);
+      return;
+    }
 
-        if (beforeSubmit) {
-          values = beforeSubmit(values);
-          if (values === false) {
-            return;
-          }
-        }
+    const { ret } = await $.http({
+      ...getUrlAndMethod(url, method),
+      data: values,
+      loading: true,
+    });
+    afterSubmit && afterSubmit(ret, form);
 
-        changeLoading(true);
-        if (trimSpaces) {
-          values = allTrim(values);
-        }
+    $.ret(ret);
+    if (ret.isSuc()) {
+      if (!isMounted.current) {
+        return;
+      }
+      afterSuc && afterSuc(ret);
+      if (redirect) {
+        $.to(getRedirectUrl(redirectUrl, ret));
+      }
+    }
+  };
 
-        if (onSubmit) {
-          const ret = await onSubmit(values);
-          changeLoading(false);
-          afterSubmit && afterSubmit(ret, form);
-          return;
-        }
-
-        $.http({
-          ...getUrlAndMethod(url, method),
-          data: values,
-          loading: true,
-        }).then(({ret}) => {
-          changeLoading(false);
-          afterSubmit && afterSubmit(ret, form);
-
-          $.ret(ret);
-          if (ret.isSuc()) {
-            if (!isMounted.current) {
-              return;
-            }
-            afterSuc && afterSuc(ret);
-            if (redirect) {
-              $.to(getRedirectUrl(redirectUrl, ret));
-            }
-          }
-        }).catch(e => {
-          changeLoading(false);
-          throw e;
-        });
-      }}
-      {...rest}
-    >
-      {children}
-    </AntdForm>
-  </FormContext.Provider>;
+  return (
+    <FormContext.Provider value={{ ...form, loading }}>
+      <AntdForm
+        form={form}
+        ref={formRef}
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 8 }}
+        scrollToFirstError={true}
+        onFinish={handleFinish}
+        {...rest}
+      >
+        {children}
+      </AntdForm>
+    </FormContext.Provider>
+  );
 };
 
 Form.propTypes = {
@@ -238,9 +243,7 @@ Form.propTypes = {
    */
   formProps: PropTypes.object,
 
-  initialValues: PropTypes.object,
-
-  formRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({current: PropTypes.any})]),
+  formRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any })]),
 
   /**
    * 是否移除提交数据中的空白

@@ -1,3 +1,18 @@
+## [3.0.2](https://github.com/miaoxing/mxjs-a-form/compare/v3.0.1...v3.0.2) (2024-06-30)
+
+
+### Bug Fixes
+
+* **a-form:** `FormItem` 渲染时忽略 `controlProps` 属性 ([e0e605d](https://github.com/miaoxing/mxjs-a-form/commit/e0e605daa646e004b7311fc1935ecd0c6e8e1784))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.8.3` to `1.9.0`
+
 ## [3.0.1](https://github.com/miaoxing/mxjs-a-form/compare/v3.0.0...v3.0.1) (2024-05-30)
 
 

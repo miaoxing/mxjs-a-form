@@ -24,6 +24,7 @@
     "@mxjs/a-clink": "^3.0.1",
     "@mxjs/cur-url": "^1.0.13",
     "@mxjs/a-input": "^1.5.1",
+    "@mxjs/a-section": "^1.0.0",
     "@mxjs/a-table": "^1.9.0",
     "all-trim": "^1.1.4",
     "antd": "~5.13",
@@ -51,7 +52,8 @@
     "jest-preset-miaoxing": "miaoxing/jest-preset-miaoxing",
     "@miaoxing/dev": "miaoxing/dev",
     "@mxjs/a-button": "miaoxing/mxjs-a-button",
-    "@mxjs/a-clink": "miaoxing/mxjs-a-clink"
+    "@mxjs/a-clink": "miaoxing/mxjs-a-clink",
+    "@mxjs/a-section": "miaoxing/mxjs-a-section"
   },
   "jest": {
     "preset": "jest-preset-miaoxing"

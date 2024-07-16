@@ -1,8 +1,9 @@
 import { Form as AntdForm } from 'antd';
 
+
 import Form from './Form';
+import FormActions from './FormActions';
 import FormItem from './FormItem';
-import FormAction from './FormAction';
 import FormContext from './FormContext';
 import SearchForm from './SearchForm';
 import SearchItem from './SearchItem';
@@ -12,11 +13,16 @@ import ModalForm from './ModalForm';
 
 const FormList = AntdForm.List;
 const FormErrorList = AntdForm.ErrorList;
+const FormAction = FormActions;
 
 export {
   Form,
   FormItem,
+  /**
+   * @deprecated use FormActions instead
+   */
   FormAction,
+  FormActions,
   FormContext,
   SearchForm,
   SearchItem,

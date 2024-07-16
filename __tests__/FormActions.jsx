@@ -1,4 +1,4 @@
-import FormAction from '../FormAction';
+import FormActions from '../FormActions';
 import {MemoryRouter} from 'react-router';
 import {render} from '@testing-library/react';
 import {ConfigProvider} from 'antd';
@@ -8,7 +8,7 @@ describe('FormAction', () => {
     const {container} = render(
       <ConfigProvider theme={{hashed: false}}>
         <MemoryRouter>
-          <FormAction/>
+          <FormActions/>
         </MemoryRouter>
       </ConfigProvider>,
     );
@@ -20,7 +20,7 @@ describe('FormAction', () => {
     const {container} = render(
       <ConfigProvider theme={{hashed: false}}>
         <MemoryRouter>
-          <FormAction wrapperCol={{offset: 8}}/>
+          <FormActions wrapperCol={{offset: 8}}/>
         </MemoryRouter>
       </ConfigProvider>,
     );

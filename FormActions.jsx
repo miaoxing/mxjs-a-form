@@ -5,7 +5,7 @@ import useForm from './useForm';
 import { Fragment } from 'react';
 import { Section } from '@mxjs/a-section';
 
-const FormAction = ({url, list = true, variant = 'card', ...props}) => {
+const FormActions = ({url, list = true, variant = 'card', ...props}) => {
   const {loading} = useForm();
   const Container = variant === 'card' ? Section : Fragment;
 
@@ -26,10 +26,10 @@ const FormAction = ({url, list = true, variant = 'card', ...props}) => {
   );
 };
 
-FormAction.propTypes = {
+FormActions.propTypes = {
   url: PropType.string,
   list: PropType.bool,
   variant: PropType.oneOf(['card', 'none']),
 };
 
-export default FormAction;
+export default FormActions;

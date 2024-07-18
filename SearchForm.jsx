@@ -23,7 +23,7 @@ const SearchForm = withTable(({children, table, filterValues, actions, ...rest})
         <Row>
           {children}
           <Col span={24}>
-            <SearchItem wrapperCol={{offset: 8}}>
+            <SearchItem wrapperCol={{offset: 8}} style={{marginBottom: 0}}>
               <Space>
                 <Button htmlType="submit">
                   搜索

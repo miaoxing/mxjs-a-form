@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/a-form",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "> TODO: description",
   "author": "twinh <twinhuang@qq.com>",
   "homepage": "https://github.com/miaoxing/miaoxing#readme",
@@ -21,14 +21,14 @@
     "url": "https://github.com/miaoxing/miaoxing/issues"
   },
   "dependencies": {
-    "@mxjs/a-clink": "^3.0.1",
-    "@mxjs/cur-url": "^1.0.13",
-    "@mxjs/a-input": "^1.5.1",
-    "@mxjs/a-section": "^1.0.0",
-    "@mxjs/a-table": "^1.9.0",
+    "@mxjs/a-clink": "^3.0.2",
+    "@mxjs/cur-url": "^1.0.14",
+    "@mxjs/a-input": "^1.5.2",
+    "@mxjs/a-section": "^1.1.0",
+    "@mxjs/a-table": "^2.0.0",
     "all-trim": "^1.1.4",
     "antd": "~5.13",
-    "miaoxing": "^0.4.15",
+    "miaoxing": "^0.4.16",
     "prop-types": "^15.7.2",
     "react-router": "^6",
     "react-router-dom": "^6"
@@ -36,9 +36,9 @@
   "devDependencies": {
     "@testing-library/react": "^14",
     "babel-jest": "^25.4.0",
-    "babel-preset-miaoxing": "^0.7.0",
-    "@miaoxing/dev": "^9.1.1",
-    "@mxjs/test": "^2.0.0",
+    "babel-preset-miaoxing": "^0.8.0",
+    "@miaoxing/dev": "^9.1.2",
+    "@mxjs/test": "^2.0.1",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1"
   },

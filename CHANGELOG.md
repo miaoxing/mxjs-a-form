@@ -1,3 +1,40 @@
+# [4.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v3.0.2...v4.0.0) (2024-07-31)
+
+
+### Bug Fixes
+
+* **a-form:** `SearchForm` 移除操作区底部间距 ([acb3194](https://github.com/miaoxing/mxjs-a-form/commit/acb319454c1c32b2f57e8dc72d9ca9b996fe7d70))
+* `export default from` 改为标准语法 ([8d0cc5b](https://github.com/miaoxing/mxjs-a-form/commit/8d0cc5b5690934c196d2fa821b9208af36321bba))
+
+
+### Features
+
+* **a-form:** `FormAction` 默认显示为设卡片视图 ([4ba9b7b](https://github.com/miaoxing/mxjs-a-form/commit/4ba9b7b34b42735c5bb436ba9ee8f80a05c24e55))
+* **a-form:** `SearchForm` 默认显示为卡片视图 ([3fcf9ce](https://github.com/miaoxing/mxjs-a-form/commit/3fcf9ce4aa807d83e5cfa189a940b09cd50c7adc))
+* **a-form:** 增加 `FormActions`，废弃 `FormAction` ([754682f](https://github.com/miaoxing/mxjs-a-form/commit/754682f634723f722750c86c7e1c4b95007166f5))
+
+
+### BREAKING CHANGES
+
+* **a-form:** `SearchForm` 默认显示为卡片视图
+* **a-form:** `FormAction` 默认显示为设卡片视图
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `3.0.1` to `3.0.2`
+* **@mxjs/cur-url:** upgrade from `1.0.13` to `1.0.14`
+* **@mxjs/a-input:** upgrade from `1.5.1` to `1.5.2`
+* **@mxjs/a-section:** upgrade from `1.0.0` to `1.1.0`
+* **@mxjs/a-table:** upgrade from `1.9.0` to `2.0.0`
+* **miaoxing:** upgrade from `0.4.15` to `0.4.16`
+* **babel-preset-miaoxing:** upgrade from `0.7.0` to `0.8.0`
+* **@miaoxing/dev:** upgrade from `9.1.1` to `9.1.2`
+* **@mxjs/test:** upgrade from `2.0.0` to `2.0.1`
+
 ## [3.0.2](https://github.com/miaoxing/mxjs-a-form/compare/v3.0.1...v3.0.2) (2024-06-30)
 
 

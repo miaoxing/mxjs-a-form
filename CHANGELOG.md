@@ -1,3 +1,25 @@
+# [4.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v4.0.2...v4.1.0) (2024-09-01)
+
+
+### Features
+
+* 更新 `antd` 到 `~5.19` ([3cce9e9](https://github.com/miaoxing/mxjs-a-form/commit/3cce9e96efc7de2b9bc8f9c029e08ee303b01318))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `3.0.4` to `3.0.5`
+* **@mxjs/cur-url:** upgrade from `1.0.16` to `1.0.17`
+* **@mxjs/a-input:** upgrade from `1.5.3` to `1.6.0`
+* **@mxjs/a-section:** upgrade from `1.1.1` to `1.2.0`
+* **@mxjs/a-table:** upgrade from `2.0.2` to `2.1.0`
+* **miaoxing:** upgrade from `0.4.18` to `0.4.19`
+* **@miaoxing/dev:** upgrade from `9.1.3` to `9.2.0`
+* **@mxjs/test:** upgrade from `2.0.3` to `2.0.4`
+
 ## [4.0.2](https://github.com/miaoxing/mxjs-a-form/compare/v4.0.1...v4.0.2) (2024-08-03)
 
 

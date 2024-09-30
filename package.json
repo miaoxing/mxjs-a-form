@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/a-form",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "> TODO: description",
   "author": "twinh <twinhuang@qq.com>",
   "homepage": "https://github.com/miaoxing/miaoxing#readme",
@@ -21,11 +21,11 @@
     "url": "https://github.com/miaoxing/miaoxing/issues"
   },
   "dependencies": {
-    "@mxjs/a-clink": "^3.0.5",
+    "@mxjs/a-clink": "^3.0.6",
     "@mxjs/cur-url": "^1.0.17",
     "@mxjs/a-input": "^1.6.0",
     "@mxjs/a-section": "^1.2.0",
-    "@mxjs/a-table": "^2.1.0",
+    "@mxjs/a-table": "^2.2.0",
     "all-trim": "^1.1.4",
     "antd": "~5.19",
     "miaoxing": "^0.4.19",

@@ -8,7 +8,7 @@ import { bootstrap, createPromise, setUrl } from '@mxjs/test';
 
 describe('Form', () => {
   test('initialValues', async () => {
-    const {container} = render(<MemoryRouter>
+    const {container} = render(
       <Form
         initialValues={{
           foo: 1,
@@ -18,7 +18,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     expect(container.querySelector('#foo').value).toBe('1');
     expect(container.querySelector('#bar').value).toBe('2');
@@ -35,14 +35,14 @@ describe('Form', () => {
       }),
     }));
 
-    const {container} = render(<MemoryRouter>
+    const {container} = render(
       <Form
         valuesUrl="test"
       >
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     await promise;
 
@@ -61,7 +61,7 @@ describe('Form', () => {
     }));
 
     const form = createRef();
-    render(<MemoryRouter>
+    render(
       <Form
         url="test"
         initialValues={{
@@ -78,7 +78,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     form.current.submit();
 
@@ -96,7 +96,7 @@ describe('Form', () => {
     }));
 
     const form = createRef();
-    render(<MemoryRouter>
+    render(
       <Form
         url="test"
         initialValues={{
@@ -111,7 +111,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     form.current.submit();
 
@@ -126,7 +126,7 @@ describe('Form', () => {
     }));
 
     const form = createRef();
-    render(<MemoryRouter>
+    render(
       <Form
         url="test"
         initialValues={{
@@ -138,7 +138,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     form.current.submit();
 
@@ -157,7 +157,7 @@ describe('Form', () => {
 
     let afterSubmitRet = {};
     const form = createRef();
-    render(<MemoryRouter>
+    render(
       <Form
         url="test"
         initialValues={{
@@ -173,7 +173,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     form.current.submit();
 
@@ -194,7 +194,7 @@ describe('Form', () => {
 
     let afterSucRet = {};
     const form = createRef();
-    render(<MemoryRouter>
+    render(
       <Form
         url="test"
         initialValues={{
@@ -210,7 +210,7 @@ describe('Form', () => {
         <FormItem name="foo"/>
         <FormItem name="bar"/>
       </Form>
-    </MemoryRouter>);
+    );
 
     form.current.submit();
 

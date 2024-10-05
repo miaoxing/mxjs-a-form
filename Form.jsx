@@ -4,6 +4,7 @@ import curUrl from '@mxjs/cur-url';
 import { Form as AntdForm } from 'antd';
 import $ from 'miaoxing';
 import allTrim from 'all-trim';
+import { useQuery } from '@mxjs/query';
 import FormContext from './FormContext';
 import useAntdForm from './useAntdForm';
 
@@ -39,6 +40,39 @@ function getRedirectUrl(redirectUrl, ret) {
   }
   return redirectUrl || curUrl.index();
 }
+
+const InitialValuesLoader = ({ form, initialValues, valuesUrl, afterLoad }) => {
+  const getValueUrl = () => {
+    if (initialValues) {
+      return;
+    }
+
+    if (valuesUrl === false) {
+      return;
+    }
+
+    return valuesUrl || curUrl.apiData();
+  };
+
+  // 默认自动从后台读取数据
+  useQuery(getValueUrl(), {
+    suspense: true,
+    revalidateOnFocus: false,
+    // 每次进入表单都加载数据
+    dedupingInterval: 0,
+    onSuccess: async (res) => {
+      afterLoad && await afterLoad(res);
+      form.setFieldsValue(form.convertInput(filterValues(res.data)));
+    }
+  });
+};
+
+InitialValuesLoader.propTypes = {
+  form: PropTypes.object,
+  initialValues: PropTypes.object,
+  valuesUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  afterLoad: PropTypes.func,
+};
 
 /**
  * 在基础的表单上增加了
@@ -81,36 +115,6 @@ const Form = (
       isMounted.current = false;
     };
   }, []);
-
-  const loadInitialValues = async () => {
-    if (rest.initialValues) {
-      return;
-    }
-
-    valuesUrl = typeof valuesUrl === 'undefined' ? curUrl.apiData() : valuesUrl;
-    if (valuesUrl === false) {
-      return;
-    }
-
-    const res = await $.get({
-      url: valuesUrl,
-      loading: true,
-    });
-    if (res.ret.isErr()) {
-      $.ret(res.ret);
-      return;
-    }
-
-    if (afterLoad) {
-      await afterLoad(res);
-    }
-    form.setFieldsValue(form.convertInput(filterValues(res.ret.data)));
-  };
-
-  // 默认自动从后台读取数据
-  useEffect(() => {
-    loadInitialValues();
-  }, [rest.initialValues]);
 
   const handleFinish = async (values) => {
     changeLoading(true);
@@ -161,19 +165,27 @@ const Form = (
   };
 
   return (
-    <FormContext.Provider value={{ ...form, loading }}>
-      <AntdForm
+    <>
+      <InitialValuesLoader
         form={form}
-        ref={formRef}
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 8 }}
-        scrollToFirstError={true}
-        onFinish={handleFinish}
-        {...rest}
-      >
-        {children}
-      </AntdForm>
-    </FormContext.Provider>
+        initialValues={rest.initialValues}
+        valuesUrl={valuesUrl}
+        afterLoad={afterLoad}
+      />
+      <FormContext.Provider value={{ ...form, loading }}>
+        <AntdForm
+          form={form}
+          ref={formRef}
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 8 }}
+          scrollToFirstError={true}
+          onFinish={handleFinish}
+          {...rest}
+        >
+          {children}
+        </AntdForm>
+      </FormContext.Provider>
+    </>
   );
 };
 

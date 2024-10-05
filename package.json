@@ -26,6 +26,7 @@
     "@mxjs/a-input": "^1.6.0",
     "@mxjs/a-section": "^1.2.0",
     "@mxjs/a-table": "^2.2.0",
+    "@mxjs/query": "^1.0.0",
     "all-trim": "^1.1.4",
     "antd": "~5.19",
     "miaoxing": "^0.4.19",

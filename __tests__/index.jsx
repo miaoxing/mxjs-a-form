@@ -314,7 +314,7 @@ describe('Form', () => {
     const {container} = render(<MemoryRouter>
       <Form
         valuesUrl="test"
-        afterLoad={async ({ret}) => {
+        afterLoad={async (ret) => {
           ret.data.foo = 4;
           ret.data.bar = 5;
         }}

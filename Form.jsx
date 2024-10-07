@@ -60,9 +60,9 @@ const InitialValuesLoader = ({ form, initialValues, valuesUrl, afterLoad }) => {
     revalidateOnFocus: false,
     // 每次进入表单都加载数据
     dedupingInterval: 0,
-    onSuccess: async (res) => {
-      afterLoad && await afterLoad(res);
-      form.setFieldsValue(form.convertInput(filterValues(res.data)));
+    onSuccess: async (ret) => {
+      afterLoad && await afterLoad(ret);
+      form.setFieldsValue(form.convertInput(filterValues(ret.data)));
     }
   });
 };

@@ -1,3 +1,36 @@
+# [5.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v4.1.1...v5.0.0) (2024-11-01)
+
+
+### Code Refactoring
+
+* **a-form:** `afterLoad` 参数由接口的 response 对象改为 json 对象 ([988c86d](https://github.com/miaoxing/mxjs-a-form/commit/988c86d1f060d4f768d3840dc4eb482aa662e4d8))
+
+
+### Features
+
+* **a-form:** `Form` 获取数据改为 `suspense` 模式 ([e297752](https://github.com/miaoxing/mxjs-a-form/commit/e2977523ae93618e8fd3282989c75132b676858b))
+
+
+### Reverts
+
+* "feat(a-form): `Form` 获取数据改为 `suspense` 模式" ([ed047df](https://github.com/miaoxing/mxjs-a-form/commit/ed047dfd8243677db2fcf9f5f2f7c0fcbe874548))
+
+
+### BREAKING CHANGES
+
+* **a-form:** `afterLoad` 参数由接口的 response 对象改为 json 对象
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `3.0.6` to `3.0.7`
+* **@mxjs/cur-url:** upgrade from `1.0.17` to `1.0.18`
+* **@mxjs/a-table:** upgrade from `2.2.0` to `2.2.1`
+* **@mxjs/test:** upgrade from `2.0.4` to `2.0.5`
+
 ## [4.1.1](https://github.com/miaoxing/mxjs-a-form/compare/v4.1.0...v4.1.1) (2024-09-30)
 
 

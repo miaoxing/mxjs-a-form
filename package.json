@@ -24,6 +24,7 @@
     "@mxjs/a-clink": "^3.0.7",
     "@mxjs/cur-url": "^1.0.18",
     "@mxjs/a-input": "^1.6.0",
+    "@mxjs/a-ret": "^2.1.1",
     "@mxjs/a-section": "^1.2.0",
     "@mxjs/a-table": "^2.2.1",
     "all-trim": "^1.1.4",

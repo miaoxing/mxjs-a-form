@@ -1,3 +1,19 @@
+# [5.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v5.0.0...v5.1.0) (2024-11-30)
+
+
+### Features
+
+* **a-form, experimental:** `Form` 支持加载外部数据后再显示 ([8baa7d7](https://github.com/miaoxing/mxjs-a-form/commit/8baa7d72e46148790d68069c18f9b545128db657))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-ret:** upgrade from `2.1.1` to `2.2.0`
+* **@mxjs/a-table:** upgrade from `2.2.1` to `2.3.0`
+
 # [5.0.0](https://github.com/miaoxing/mxjs-a-form/compare/v4.1.1...v5.0.0) (2024-11-01)
 
 

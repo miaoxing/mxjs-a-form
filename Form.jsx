@@ -135,7 +135,7 @@ const Form = (
     values = form.convertOutput(values);
 
     if (beforeSubmit) {
-      values = beforeSubmit(values);
+      values = await beforeSubmit(values);
       if (values === false) {
         return;
       }

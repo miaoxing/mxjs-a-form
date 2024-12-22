@@ -1,41 +1,57 @@
 import {Select as AntdSelect} from 'antd';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
+import {useState, useEffect} from 'react';
 
-const {Option} = AntdSelect;
-
-const renderOptions = (props) => {
-  let opts = [];
+const getOptions = (props) => {
+  let options = [];
 
   if (props.firstLabel) {
     const firstValue = typeof props.firstValue !== 'undefined' ? props.firstValue : 0;
-    opts.push(<Option key={firstValue} value={firstValue}>{props.firstLabel}</Option>);
+    options.push({
+      label: props.firstLabel,
+      value: firstValue,
+    });
   }
 
   if (props.all) {
-    opts.push(<Option key="" value="">全部</Option>);
+    options.push({
+      label: '全部',
+      value: '',
+    });
   }
 
   const isArray = Array.isArray(props.options);
   map(props.options, (option, key) => {
     if (typeof option === 'object') {
-      opts.push(<Option key={option[props.valueKey]} value={option[props.valueKey]}>
-        {option[props.labelKey]}
-      </Option>);
+      options.push({
+        label: option[props.labelKey],
+        value: option[props.valueKey],
+      });
     } else if (isArray) {
-      opts.push(<Option key={option} value={option}>{option}</Option>);
+      options.push({
+        label: option,
+        value: option,
+      });
     } else {
-      opts.push(<Option key={key} value={key}>{option}</Option>);
+      options.push({
+        label: option,
+        value: key,
+      });
     }
   });
 
-  return opts;
+  return options;
 };
 
 const Select = ({options, labelKey, valueKey, all, firstLabel, firstValue, ...props}) => {
-  return <AntdSelect {...props}>
-    {renderOptions({options, labelKey, valueKey, all, firstLabel, firstValue})}
-  </AntdSelect>;
+  const [opts, setOpts] = useState([]);
+
+  useEffect(() => {
+    setOpts(getOptions({options, labelKey, valueKey, all, firstLabel, firstValue}));
+  }, [options, labelKey, valueKey, all, firstLabel, firstValue]);
+
+  return <AntdSelect {...props} options={opts} />;
 };
 
 Select.defaultProps = {

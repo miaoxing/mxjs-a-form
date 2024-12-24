@@ -6,7 +6,6 @@ import $ from 'miaoxing';
 import allTrim from 'all-trim';
 import FormContext from './FormContext';
 import useAntdForm from './useAntdForm';
-import { Ret } from '@mxjs/a-ret';
 
 /**
  * 将输入项的值从 null 转换为空字符,因为 React input 值不允许为 null
@@ -41,13 +40,6 @@ function getRedirectUrl(redirectUrl, ret) {
   return redirectUrl || curUrl.index();
 }
 
-const isReady = (result) => {
-  if (!result) {
-    return true;
-  }
-  return !(Array.isArray(result) ? result : [result]).find(item => item.isLoading || item.error);
-};
-
 /**
  * 在基础的表单上增加了
  *
@@ -71,8 +63,6 @@ const Form = (
     redirect = true,
     redirectUrl,
     formRef,
-    result,
-    style = {},
     ...rest
   },
 ) => {
@@ -170,13 +160,8 @@ const Form = (
     }
   };
 
-  if (!isReady(result)) {
-    style.display = 'none';
-  }
-
   return (
     <>
-      {result && <Ret result={result}/>}
       <FormContext.Provider value={{ ...form, loading }}>
         <AntdForm
           form={form}
@@ -184,7 +169,6 @@ const Form = (
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 8 }}
           scrollToFirstError={true}
-          style={style}
           onFinish={handleFinish}
           {...rest}
         >
@@ -269,13 +253,6 @@ Form.propTypes = {
   trimSpaces: PropTypes.bool,
 
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-
-  /**
-   * @experimental
-   */
-  result: PropTypes.oneOfType([PropTypes.object,  PropTypes.array]),
-
-  style: PropTypes.object,
 };
 
 export default Form;

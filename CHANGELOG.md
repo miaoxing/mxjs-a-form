@@ -1,3 +1,32 @@
+# [5.2.0](https://github.com/miaoxing/mxjs-a-form/compare/v5.1.0...v5.2.0) (2024-12-30)
+
+
+### Features
+
+* **a-form:** `beforeSubmit` 支持异步获取数据 ([b7419fc](https://github.com/miaoxing/mxjs-a-form/commit/b7419fc2febd41e8a88a801063ead749f4679aea))
+* **a-form:** `Select` 组件改为通过 `options` 数组传入选项 ([db95d08](https://github.com/miaoxing/mxjs-a-form/commit/db95d08f2880df904e4e9a711a82c0729084c861))
+
+
+### Reverts
+
+* "feat(a-form, experimental): `Form` 支持加载外部数据后再显示" ([d2e6a2b](https://github.com/miaoxing/mxjs-a-form/commit/d2e6a2b605fefc25fa0d37e4d185b7e9b3ae14be))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `3.0.7` to `3.0.8`
+* **@mxjs/cur-url:** upgrade from `1.0.18` to `2.0.0`
+* **@mxjs/a-input:** upgrade from `1.6.0` to `1.6.1`
+* **@mxjs/a-ret:** upgrade from `2.2.0` to `2.2.1`
+* **@mxjs/a-section:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-table:** upgrade from `2.3.0` to `2.4.0`
+* **miaoxing:** upgrade from `0.4.19` to `0.4.20`
+* **@miaoxing/dev:** upgrade from `9.2.0` to `9.3.0`
+* **@mxjs/test:** upgrade from `2.0.5` to `2.0.6`
+
 # [5.1.0](https://github.com/miaoxing/mxjs-a-form/compare/v5.0.0...v5.1.0) (2024-11-30)
 
 

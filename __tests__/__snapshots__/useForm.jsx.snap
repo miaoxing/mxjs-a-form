@@ -7,7 +7,7 @@ exports[`useForm converter 1`] = `
       Object {
         "loading": true,
         "method": "get",
-        "url": "",
+        "url": "defaults",
       },
     ],
     Array [

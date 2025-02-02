@@ -1,3 +1,13 @@
+## [5.2.2](https://github.com/miaoxing/mxjs-a-form/compare/v5.2.1...v5.2.2) (2025-02-02)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `2.4.1` to `2.5.0`
+
 ## [5.2.1](https://github.com/miaoxing/mxjs-a-form/compare/v5.2.0...v5.2.1) (2024-12-31)
 
 

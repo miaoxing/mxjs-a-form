@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/a-form",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "description": "> TODO: description",
   "author": "twinh <twinhuang@qq.com>",
   "homepage": "https://github.com/miaoxing/miaoxing#readme",
@@ -26,7 +26,7 @@
     "@mxjs/a-input": "^1.6.2",
     "@mxjs/a-ret": "^2.2.2",
     "@mxjs/a-section": "^1.2.2",
-    "@mxjs/a-table": "^2.4.1",
+    "@mxjs/a-table": "^2.5.0",
     "all-trim": "^1.1.4",
     "antd": "~5.19",
     "miaoxing": "^0.4.21",
